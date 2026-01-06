@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 /* Global Reset & Base Styles */
 * {
     margin: 0;
@@ -12,6 +14,78 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+/* Tabs Navigation */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--color-text-secondary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tab-btn:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: rgba(5, 204, 205, 0.1);
+    border-color: var(--color-neon);
+    color: var(--color-neon);
+    box-shadow: 0 0 15px rgba(5, 204, 205, 0.2);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Specific Grid Layout for Stats Tab */
+#tab-stats.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* Default glass panel for other tabs */
+.tab-content section.glass-panel {
+    padding: 2rem;
+}
+
+/* Tech Stack Grid */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.tech-btn {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
 }
 
 /* Layout Container */
@@ -108,17 +182,15 @@ a:hover {
     color: var(--color-turquoise);
 }
 
-/* Main Content Grid */
+/* Main Content Container */
 .main-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Split View */
-    gap: var(--spacing-xl);
     flex: 1;
+    /* Grid layout removed in favor of tab-specific layouts */
 }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-    .main-content {
+    #tab-stats.active {
         grid-template-columns: 1fr;
     }
 }

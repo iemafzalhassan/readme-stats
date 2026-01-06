@@ -17,7 +17,7 @@ router.get("/gist", gistCard);
 
 app.use("/api", router);
 
-const port = process.env.PORT || process.env.port || 9000;
+const port = process.env.PORT || process.env.port || 4600;
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });

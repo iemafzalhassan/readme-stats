@@ -1,0 +1,245 @@
+/* Preview Section */
+.preview-section {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-preview-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--color-border);
+    padding: var(--spacing-md);
+    min-height: 250px;
+    margin-bottom: var(--spacing-md);
+    overflow: auto;
+}
+
+.card-wrapper svg {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+    transition: transform var(--anim-normal);
+}
+
+.card-wrapper:hover svg {
+    transform: scale(1.02);
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-turquoise);
+}
+
+/* Action Bar */
+.action-bar {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    transition: all var(--anim-fast);
+    flex: 1;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: var(--color-turquoise);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(5, 204, 205, 0.3);
+}
+
+.btn-primary:hover {
+    background: #04b3b4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 204, 205, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-text-primary);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover {
+    color: var(--color-turquoise);
+}
+
+/* Configuration Section */
+.config-section {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-card); /* Ensure better contrast */
+}
+
+.config-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Form Elements */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.required {
+    color: var(--color-turquoise);
+}
+
+.input-field {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: border-color var(--anim-fast);
+    width: 100%;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--color-turquoise);
+    box-shadow: 0 0 0 3px rgba(5, 204, 205, 0.1);
+}
+
+/* Toggle Switch */
+.toggle-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md) !important;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch .slider {
+    width: 44px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    position: relative;
+    transition: background-color var(--anim-fast);
+    border: 1px solid var(--color-border);
+}
+
+.toggle-switch .slider::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-text-secondary);
+    border-radius: 50%;
+    transition: transform var(--anim-fast), background-color var(--anim-fast);
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: rgba(5, 204, 205, 0.2);
+    border-color: var(--color-turquoise);
+}
+
+.toggle-switch input:checked + .slider::after {
+    transform: translateX(20px);
+    background-color: var(--color-turquoise);
+}
+
+.toggle-switch .label-text {
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+}
+
+/* Theme Badge/Tag styles (if needed within selector) */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: rgba(5, 204, 205, 0.15);
+    color: var(--color-turquoise);
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+/* Theme Selector Grid - Simple initially */
+.theme-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.theme-option {
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: rgba(255,255,255,0.05);
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8rem;
+    transition: all var(--anim-fast);
+}
+
+.theme-option:hover {
+    border-color: var(--color-text-secondary);
+    background: rgba(255,255,255,0.1);
+}
+
+.theme-option.active {
+    border-color: var(--color-turquoise);
+    background: rgba(5, 204, 205, 0.15);
+    color: var(--color-turquoise);
+    font-weight: 600;
+}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Dynamically generate stats for your GitHub readme - Powered by EdgeOps Labs",
   "keywords": [
-    "github-readme-stats",
+    "readme-stats",
     "readme-stats",
     "cards",
     "card-generator"

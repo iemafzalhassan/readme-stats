@@ -12,9 +12,8 @@ const router = express.Router();
 
 // app.use(express.static("public")); // Moved down
 
-// router.get("/", statsCard); // Moved to /api/ or handled by static
+router.get("/", statsCard);
 router.get("/themes", (req, res) => {
-  console.log("Fetching themes...");
   res.json(Object.keys(themes));
 });
 router.get("/pin", repoCard);
@@ -29,5 +28,4 @@ app.use(express.static("public"));
 const port = process.env.PORT || process.env.port || 4700;
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
-  console.log(`Available themes: ${Object.keys(themes).length}`);
 });

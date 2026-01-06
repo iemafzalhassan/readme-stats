@@ -47,100 +47,155 @@
         </header>
 
         <main class="main-content">
-            <!-- Preview Section -->
-            <section class="preview-section glass-panel">
-                <div class="section-header">
-                    <h2>Live Preview</h2>
-                    <div class="preview-badges">
-                        <span class="badge" id="preview-badge">Generating...</span>
-                    </div>
-                </div>
-                
-                <div class="card-preview-container">
-                    <div class="card-wrapper" id="card-wrapper">
-                        <!-- SVG will be injected here -->
-                        <div class="loader">
-                            <div class="spinner"></div>
-                            <span>Fetching Stats...</span>
+            <!-- Navigation Tabs -->
+            <nav class="tabs-nav glass-panel">
+                <button class="tab-btn active" data-target="tab-stats">
+                    <span class="icon">📊</span> GitHub Stats
+                </button>
+                <button class="tab-btn" data-target="tab-tech">
+                    <span class="icon">💻</span> Tech Stack
+                </button>
+                <button class="tab-btn" data-target="tab-streak">
+                    <span class="icon">🔥</span> Streak Stats
+                </button>
+                <button class="tab-btn" data-target="tab-trophy">
+                    <span class="icon">🏆</span> Trophies
+                </button>
+            </nav>
+
+            <!-- Tab Contents -->
+            <div class="tab-content active" id="tab-stats">
+                <!-- Preview Section -->
+                <section class="preview-section glass-panel">
+                    <div class="section-header">
+                        <h2>Live Preview</h2>
+                        <div class="preview-badges">
+                            <span class="badge" id="preview-badge">Generating...</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="action-bar">
-                    <button class="btn btn-primary" id="copy-markdown">
-                        <span class="icon">📋</span> Copy Markdown
-                    </button>
-                    <button class="btn btn-secondary" id="copy-html">
-                        <span class="icon">💻</span> Copy HTML
-                    </button>
-                    <button class="btn btn-ghost" id="open-new-tab">
-                        <span class="icon">↗️</span> Open in New Tab
-                    </button>
-                </div>
-            </section>
-
-            <!-- Configuration Section -->
-            <section class="config-section glass-panel">
-                <div class="section-header">
-                    <h2>Configuration</h2>
-                    <p>Customize your stats card</p>
-                </div>
-
-                <form id="config-form" class="config-grid">
-                    <!-- User Info -->
-                    <div class="form-group">
-                        <label for="username">GitHub Username <span class="required">*</span></label>
-                        <input type="text" id="username" name="username" placeholder="iemafzalhassan" required class="input-field">
-                    </div>
-
-                    <!-- Theme - Special UI -->
-                    <div class="form-group full-width">
-                        <label>Theme</label>
-                        <div class="theme-selector" id="theme-selector">
-                            <!-- Theme options will be injected by JS -->
+                    
+                    <div class="card-preview-container">
+                        <div class="card-wrapper" id="card-wrapper">
+                            <!-- SVG will be injected here -->
+                            <div class="loader">
+                                <div class="spinner"></div>
+                                <span>Fetching Stats...</span>
+                            </div>
                         </div>
-                        <input type="hidden" id="theme" name="theme" value="edgeopslabs">
                     </div>
 
-                    <!-- Toggles -->
-                    <div class="form-group toggle-group">
-                        <label class="toggle-switch">
-                            <input type="checkbox" name="hide_border" id="hide_border">
-                            <span class="slider"></span>
-                            <span class="label-text">Hide Border</span>
-                        </label>
-                        
-                        <label class="toggle-switch">
-                            <input type="checkbox" name="hide_title" id="hide_title">
-                            <span class="slider"></span>
-                            <span class="label-text">Hide Title</span>
-                        </label>
-
-                        <label class="toggle-switch">
-                            <input type="checkbox" name="hide_rank" id="hide_rank">
-                            <span class="slider"></span>
-                            <span class="label-text">Hide Rank</span>
-                        </label>
-
-                        <label class="toggle-switch">
-                            <input type="checkbox" name="show_icons" id="show_icons" checked>
-                            <span class="slider"></span>
-                            <span class="label-text">Show Icons</span>
-                        </label>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" id="copy-markdown">
+                            <span class="icon">📋</span> Copy Markdown
+                        </button>
+                        <button class="btn btn-secondary" id="copy-html">
+                            <span class="icon">💻</span> Copy HTML
+                        </button>
+                        <button class="btn btn-ghost" id="open-new-tab">
+                            <span class="icon">↗️</span> Open in New Tab
+                        </button>
                     </div>
-
-                    <!-- Advanced Options -->
-                    <div class="form-group">
-                        <label for="custom_title">Custom Title</label>
-                        <input type="text" id="custom_title" name="custom_title" placeholder="My Coding Stats" class="input-field">
+                </section>
+    
+                <!-- Configuration Section -->
+                <section class="config-section glass-panel">
+                    <div class="section-header">
+                        <h2>Configuration</h2>
+                        <p>Customize your stats card</p>
                     </div>
+    
+                    <form id="config-form" class="config-grid">
+                        <!-- User Info -->
+                        <div class="form-group">
+                            <label for="username">GitHub Username <span class="required">*</span></label>
+                            <input type="text" id="username" name="username" placeholder="iemafzalhassan" required class="input-field">
+                        </div>
+    
+                        <!-- Theme - Special UI -->
+                        <div class="form-group full-width">
+                            <label>Theme</label>
+                            <div class="theme-selector" id="theme-selector">
+                                <!-- Theme options will be injected by JS -->
+                            </div>
+                            <input type="hidden" id="theme" name="theme" value="edgeopslabs">
+                        </div>
+    
+                        <!-- Toggles -->
+                        <div class="form-group toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="hide_border" id="hide_border">
+                                <span class="slider"></span>
+                                <span class="label-text">Hide Border</span>
+                            </label>
+                            
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="hide_title" id="hide_title">
+                                <span class="slider"></span>
+                                <span class="label-text">Hide Title</span>
+                            </label>
+    
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="hide_rank" id="hide_rank">
+                                <span class="slider"></span>
+                                <span class="label-text">Hide Rank</span>
+                            </label>
+    
+                            <label class="toggle-switch">
+                                <input type="checkbox" name="show_icons" id="show_icons" checked>
+                                <span class="slider"></span>
+                                <span class="label-text">Show Icons</span>
+                            </label>
+                        </div>
+    
+                        <!-- Advanced Options -->
+                        <div class="form-group">
+                            <label for="custom_title">Custom Title</label>
+                            <input type="text" id="custom_title" name="custom_title" placeholder="My Coding Stats" class="input-field">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="line_height">Line Height</label>
+                            <input type="number" id="line_height" name="line_height" placeholder="25" min="20" max="50" class="input-field">
+                        </div>
+                    </form>
+                </section>
+            </div>
 
-                    <div class="form-group">
-                        <label for="line_height">Line Height</label>
-                        <input type="number" id="line_height" name="line_height" placeholder="25" min="20" max="50" class="input-field">
+            <div class="tab-content" id="tab-tech">
+                <section class="glass-panel">
+                    <div class="section-header">
+                        <h2>Tech Stack Builder</h2>
+                        <p>Create your custom tech stack badge list</p>
                     </div>
-                </form>
-            </section>
+                    <div class="maintenance-view">
+                        <p>Coming Soon...</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="tab-streak">
+                <section class="glass-panel">
+                    <div class="section-header">
+                        <h2>Streak Stats</h2>
+                        <p>Display your GitHub contribution streak</p>
+                    </div>
+                    <div class="maintenance-view">
+                        <p>Coming Soon...</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="tab-trophy">
+                <section class="glass-panel">
+                    <div class="section-header">
+                        <h2>Trophies</h2>
+                        <p>Showcase your GitHub Trophies</p>
+                    </div>
+                    <div class="maintenance-view">
+                        <p>Coming Soon...</p>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <!-- Footer -->

@@ -1,12 +1,17 @@
 :root {
   /* EdgeOps Brand Colors */
-  --color-primary: #05cccd;
-  --color-secondary: #104baf;
-  --color-text-main: #ffffff;
-  --color-text-muted: #60c0e9;
-  --color-bg-dark: #0a192f;
-  --color-bg-card: rgba(16, 75, 175, 0.4);
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #c0ff6b;
+  --color-secondary: #0b00cf;
+  --color-text-main: #d5d5d5;
+  --color-text-muted: #656565;
+  --color-bg-dark: #000000;
+  --color-bg-card: rgba(
+    20,
+    20,
+    20,
+    0.85
+  ); /* Darker, higher opacity for contrast */
+  --color-border: #656565;
 
   /* Effects */
   --glass-blur: blur(16px);

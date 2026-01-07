@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeOps Profile Wizard</title>
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <header class="glass-header">
+        <div class="brand">
+            <img src="/assets/favicon.png" alt="EdgeOps">
+            <span>Profile Wizard</span>
+        </div>
+        <div class="header-actions">
+           <!-- Potential GitHub Link -->
+        </div>
+    </header>
+
+    <!-- LANDING PAGE -->
+    <section id="landing-page" class="active">
+        <div class="hero">
+            <h1 class="hero-title">Forge Your <span class="gradient-text">GitHub Identity</span></h1>
+            <p class="hero-subtitle">Generates Stats, Streaks, Trophies, and Tech Stacks in one unified flow.</p>
+            <div class="hero-actions">
+                <button id="btn-start-wizard" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-bolt"></i> Get Started
+                </button>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Abstract or Floating Cards Visual -->
+                <div class="floating-card c1">Stats</div>
+                <div class="floating-card c2">Streak</div>
+                <div class="floating-card c3">Stack</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WIZARD CONTAINER -->
+    <section id="wizard-container" class="hidden">
+        
+        <!-- Progress Bar -->
+        <div class="wizard-progress">
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="step-indicators">
+                <div class="step-dot active" data-step="1">1</div>
+                <div class="step-dot" data-step="2">2</div>
+                <div class="step-dot" data-step="3">3</div>
+                <div class="step-dot" data-step="4">4</div>
+                <div class="step-dot" data-step="5">5</div>
+                <div class="step-dot" data-step="6">6</div>
+                <div class="step-dot" data-step="7">7</div>
+                <div class="step-dot" data-step="8">8</div>
+            </div>
+            <div class="step-label" id="step-label">Profile Basics</div>
+        </div>
+
+        <div class="wizard-content">
+            
+            <!-- STEP 1: Profile -->
+            <div class="wizard-step active" id="step-1">
+                <h2>Who are you?</h2>
+                <div class="input-group">
+                    <label>GitHub Username</label>
+                    <input type="text" id="global-username" placeholder="username" value="iemafzalhassan">
+                </div>
+                <div class="input-group">
+                    <label>Preferred Global Theme</label>
+                    <select id="global-theme">
+                        <option value="edgeopslabs">EdgeOps Labs</option>
+                        <option value="radical">Radical</option>
+                        <option value="tokyonight">Tokyo Night</option>
+                        <option value="default">Default</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STEP 2: Tech Stack -->
+            <div class="wizard-step" id="step-2">
+                <h2>Tech Stack</h2>
+                <p class="step-desc">Select technologies you use.</p>
+                
+                <div class="config-grid">
+                    <div class="input-group">
+                        <label>Search</label>
+                        <input type="text" id="tech-search" placeholder="React, Go...">
+                        <div id="tech-icon-list" class="chip-list"></div>
+                    </div>
+                    <div class="preview-box">
+                         <div id="tech-stack-preview"></div>
+                         <button class="btn btn-sm btn-secondary" id="btn-clear-stack">Clear Stack</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Badge Style</label>
+                    <select id="tech-style">
+                        <option value="plastic">Plastic</option>
+                        <option value="flat">Flat</option>
+                        <option value="for-the-badge">For-the-Badge</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STEP 3: Streak Stats -->
+            <div class="wizard-step" id="step-3">
+                <h2>Streak Stats</h2>
+                <div class="card-preview-wrapper" id="preview-streak">
+                    <!-- Live Preview Injected Here -->
+                </div>
+                <div class="options-row">
+                    <label><input type="checkbox" id="streak-hide-border"> Hide Border</label>
+                    <label><input type="checkbox" id="streak-hide-title"> Hide Title</label>
+                </div>
+            </div>
+
+            <!-- STEP 4: GitHub Stats -->
+            <div class="wizard-step" id="step-4">
+                <h2>GitHub Stats</h2>
+                <div class="card-preview-wrapper" id="preview-stats">
+                    <!-- Live Preview -->
+                </div>
+                <div class="options-grid">
+                    <label><input type="checkbox" id="stats-hide-border"> Hide Border</label>
+                    <label><input type="checkbox" id="stats-show-icons" checked> Show Icons</label>
+                    <label><input type="checkbox" id="stats-include-commits" checked> Include All Commits</label>
+                    <label><input type="checkbox" id="stats-hide-rank"> Hide Rank</label>
+                </div>
+            </div>
+
+            <!-- STEP 5: Trophies -->
+            <div class="wizard-step" id="step-5">
+                <h2>Trophies</h2>
+                <div class="card-preview-wrapper" id="preview-trophies"></div>
+                <div class="input-group">
+                    <label>Theme</label>
+                    <select id="trophy-theme">
+                        <option value="flat">Flat</option>
+                        <option value="onedark">OneDark</option>
+                        <option value="gruvbox">Gruvbox</option>
+                        <option value="dracula">Dracula</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="alduin">Alduin</option>
+                        <option value="darkhub">Darkhub</option>
+                        <option value="juicyfresh">JuicyFresh</option>
+                        <option value="bray_jones">Bray Jones</option>
+                        <option value="green">Green</option>
+                        <option value="medium">Medium</option>
+                        <option value="yeblu">Yeblu</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STEP 6: Quotes -->
+            <div class="wizard-step" id="step-6">
+                <h2>Daily Quote</h2>
+                <div class="card-preview-wrapper" id="preview-quotes"></div>
+                <div class="input-group">
+                    <label>Quote Theme</label>
+                    <select id="quote-theme">
+                        <option value="radical">Radical</option>
+                        <option value="tokyonight">Tokyo Night</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <label>Layout</label>
+                    <select id="quote-layout">
+                        <option value="vertical">Vertical</option>
+                        <option value="horizontal">Horizontal</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STEP 7: Visitors -->
+            <div class="wizard-step" id="step-7">
+                <h2>Visitor Count</h2>
+                <div class="card-preview-wrapper" id="preview-visitors"></div>
+                <div class="input-group">
+                     <label>Label</label>
+                     <input type="text" id="visitor-label" value="VISITORS">
+                </div>
+                <div class="input-group">
+                     <label>Badge Style</label>
+                     <select id="visitor-style">
+                         <option value="flat">Flat</option>
+                         <option value="flat-square">Flat Square</option>
+                         <option value="plastic">Plastic</option>
+                         <option value="for-the-badge">For-the-Badge</option>
+                         <option value="social">Social</option>
+                     </select>
+                </div>
+                 <div class="input-group">
+                     <label>Color</label>
+                     <input type="color" id="visitor-color" value="#05CCCD">
+                </div>
+                <div class="input-group">
+                    <label>Theme (Overrides Color)</label>
+                    <select id="visitor-theme">
+                        <option value="">-- Custom Color --</option>
+                        <option value="edgeopslabs">EdgeOps Labs</option>
+                        <option value="radical">Radical</option>
+                        <option value="tokyonight">Tokyo Night</option>
+                        <option value="gruvbox">Gruvbox</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STEP 8: Finalize -->
+            <div class="wizard-step" id="step-8">
+                <h2>Your Profile is Ready!</h2>
+                <p>Copy the code below into your README.md</p>
+                
+                <textarea id="final-markdown" class="code-block" readonly></textarea>
+                
+                <div class="final-actions">
+                    <button class="btn btn-primary" id="btn-copy-final"><i class="fa-regular fa-clipboard"></i> Copy All</button>
+                    <!-- <button class="btn btn-secondary" id="btn-download-assets">⬇ Download Assets</button> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Wizard Nav -->
+        <div class="wizard-footer">
+            <button class="btn btn-secondary" id="btn-prev" disabled>Back</button>
+            <button class="btn btn-primary" id="btn-next">Next</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Powered by EdgeOps Labs</p>
+        <p>Made with love <span class="heart-beat"><i class="fa-solid fa-heart"></i></span></p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

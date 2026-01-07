@@ -94,7 +94,7 @@ const REPOSITORY_DATA = {
  */
 const GIST_DATA = {
   name: "link.txt",
-  nameWithOwner: "qwerty541/link.txt",
+  nameWithOwner: "iemafzalhassan/link.txt",
   description:
     "Trying to access this path on Windows 10 ver. 1803+ will breaks NTFS",
   language: "Text",

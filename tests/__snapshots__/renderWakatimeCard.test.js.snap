@@ -154,6 +154,12 @@ exports[`Test Render WakaTime Card should render correctly 1`] = `
     </svg>
   
         </g>
+
+        <g data-testid="attribution" transform="translate(470, 135)">
+          <a href="https://github.com/EdgeOpslabs">
+            <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="#434d58" opacity="0.8">Powered by EdgeOps Labs</text>
+          </a>
+        </g>
       </svg>
     "
 `;
@@ -306,6 +312,12 @@ exports[`Test Render WakaTime Card should render correctly with compact layout 1
     </svg>
   
         </g>
+
+        <g data-testid="attribution" transform="translate(470, 100)">
+          <a href="https://github.com/EdgeOpslabs">
+            <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="#434d58" opacity="0.8">Powered by EdgeOps Labs</text>
+          </a>
+        </g>
       </svg>
     "
 `;
@@ -457,6 +469,12 @@ exports[`Test Render WakaTime Card should render correctly with compact layout w
     
     </svg>
   
+        </g>
+
+        <g data-testid="attribution" transform="translate(470, 100)">
+          <a href="https://github.com/EdgeOpslabs">
+            <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="#434d58" opacity="0.8">Powered by EdgeOps Labs</text>
+          </a>
         </g>
       </svg>
     "
@@ -615,6 +633,12 @@ exports[`Test Render WakaTime Card should render correctly with percent display 
   </g>
     </svg>
   
+        </g>
+
+        <g data-testid="attribution" transform="translate(470, 135)">
+          <a href="https://github.com/EdgeOpslabs">
+            <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="#434d58" opacity="0.8">Powered by EdgeOps Labs</text>
+          </a>
         </g>
       </svg>
     "

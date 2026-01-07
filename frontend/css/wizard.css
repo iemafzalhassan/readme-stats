@@ -1,0 +1,228 @@
+/* Landing Page */
+#landing-page {
+  display: none;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#landing-page.active {
+  display: flex;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), #60c0e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+}
+
+.hero-visual {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  margin-top: 2rem;
+}
+/* Abstract Cards */
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  animation: float 6s ease-in-out infinite;
+}
+.c1 {
+  top: 10px;
+  left: 20%;
+  animation-delay: 0s;
+  color: var(--color-primary);
+}
+.c2 {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 1s;
+  color: #ef960f;
+}
+.c3 {
+  top: 10px;
+  right: 20%;
+  animation-delay: 2s;
+  color: #ff4757;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Wizard */
+#wizard-container {
+  padding: 2rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#wizard-container.hidden {
+  display: none;
+}
+#wizard-container.active {
+  display: flex;
+}
+
+/* Progress */
+.wizard-progress {
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.progress-track {
+  background: rgba(255, 255, 255, 0.1);
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  z-index: 0;
+}
+.progress-fill {
+  background: var(--color-primary);
+  height: 100%;
+  width: 0%; /* JS updates this */
+  transition: width 0.3s ease;
+}
+.step-indicators {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+.step-dot {
+  width: 30px;
+  height: 30px;
+  background: var(--color-bg-dark);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.step-dot.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 10px var(--color-primary);
+}
+.step-label {
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Steps */
+.wizard-step {
+  display: none;
+  animation: fadeIn 0.4s ease;
+  background: var(--color-bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+}
+.wizard-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tech Chips */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tech-chip {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+}
+.tech-chip:hover {
+  background: var(--color-primary);
+  color: #000;
+}
+.preview-box {
+  min-height: 150px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Final Code Block */
+.code-block {
+  width: 100%;
+  min-height: 300px;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  resize: vertical;
+  border: 1px solid #30363d;
+}
+
+.wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}

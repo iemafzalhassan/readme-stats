@@ -1,7 +1,7 @@
 const CONFIG = {
   apiBase: window.location.origin + "/api",
   defaults: {
-    username: "iemafzalhassan",
+    username: "octocat",
     theme: "edgeopslabs",
     hide_border: false,
     hide_title: false,

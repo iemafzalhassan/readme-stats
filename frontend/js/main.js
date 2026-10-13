@@ -140,16 +140,16 @@ const FALLBACK_THEMES = {
 };
 
 const state = {
-  username: "iemafzalhassan",
-  displayName: "Afzal Hassan",
-  roleTitle: "DevOps & Platform Engineer",
-  company: "@EdgeOpsLabs",
-  location: "India",
-  bio: "Automating cloud-native infrastructure, Kubernetes platforms, and open-source developer tools.",
+  username: "",
+  displayName: "Developer",
+  roleTitle: "Full-Stack Engineer & Cloud Architect",
+  company: "@OpenSource",
+  location: "Global",
+  bio: "Passionate developer building high-impact tools, cloud infrastructure, and modern applications.",
   currentWork:
-    "High-availability Kubernetes clusters, GitOps pipelines & readme-stats Studio",
-  linkedin: "iemafzalhassan",
-  twitter: "iemafzalhassan",
+    "Open-source tools, high-performance systems & cloud infrastructure",
+  linkedin: "",
+  twitter: "",
   blog: "",
   email: "",
   templateId: "devops",
@@ -161,8 +161,11 @@ const state = {
   iconsPerLine: 8,
   themeSyncIcons: false,
   selectedIcons: [...STACK_PRESETS.devops],
-  availableRepos: [{ name: "readme-stats", stars: 12, language: "JavaScript" }],
-  selectedRepos: ["readme-stats"],
+  availableRepos: [
+    { name: "cloud-platform", stars: 128, language: "Go" },
+    { name: "web-framework", stars: 94, language: "TypeScript" },
+  ],
+  selectedRepos: ["cloud-platform", "web-framework"],
   showStats: true,
   showStreak: true,
   showTopLangs: true,
@@ -720,6 +723,11 @@ async function handleGitHubAutoFetch() {
     renderRepoChecklist();
     renderIconCatalog();
     refreshStudioOutput();
+    try {
+      localStorage.setItem("readme_stats_username", intel.username);
+    } catch {
+      // Storage unavailable in private browsing
+    }
     showToast(`Auto-fetched @${intel.username} (${intel.publicRepos} repos)`);
   } catch (err) {
     if (statusPill) statusPill.textContent = "Ready";
@@ -756,7 +764,7 @@ function bindEvents() {
   document
     .getElementById("input-github-username")
     ?.addEventListener("input", (e) => {
-      state.username = e.target.value.trim() || "iemafzalhassan";
+      state.username = e.target.value.trim();
       refreshStudioOutput();
     });
 
@@ -962,5 +970,19 @@ document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   refreshStudioOutput();
   loadThemesFromApi();
-  handleGitHubAutoFetch();
+
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramUser = urlParams.get("username") || urlParams.get("user");
+    const storedUser = localStorage.getItem("readme_stats_username");
+    const initialUser = (paramUser || storedUser || "").trim();
+
+    if (initialUser) {
+      const input = document.getElementById("input-github-username");
+      if (input) input.value = initialUser;
+      handleGitHubAutoFetch();
+    }
+  } catch {
+    // Quiet fallback
+  }
 });

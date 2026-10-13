@@ -8,7 +8,6 @@ scripts
 tests
 .env
 **/*.md
-**/*.svg
 .eslintrc.json
 .prettierignore
 .pretterrc.json

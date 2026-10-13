@@ -14,7 +14,10 @@ export function initStreak() {
     if (!document.getElementById("config-streak").classList.contains("active"))
       return;
 
-    const username = els["streak-username"].value || "iemafzalhassan";
+    const username =
+      els["streak-username"]?.value ||
+      document.getElementById("input-github-username")?.value ||
+      "octocat";
     const theme = els["streak-theme"].value;
 
     const query = `?username=${username}&theme=${theme}`;

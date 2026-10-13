@@ -15,8 +15,8 @@ export function initTrophies() {
 
     const username =
       els["trophy-username"]?.value ||
-      document.getElementById("global-username").value ||
-      "iemafzalhassan";
+      document.getElementById("input-github-username")?.value ||
+      "octocat";
     const theme = els["trophy-theme"].value;
 
     // Using external service for now

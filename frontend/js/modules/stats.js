@@ -24,7 +24,10 @@ export function initStats() {
     if (!document.getElementById("config-stats").classList.contains("active"))
       return;
 
-    const username = els["stats-username"].value || "iemafzalhassan";
+    const username =
+      els["stats-username"]?.value ||
+      document.getElementById("input-github-username")?.value ||
+      "octocat";
     const theme = els["stats-theme"].value;
     const hideBorder = els["stats-hide-border"].checked;
     const showIcons = els["stats-show-icons"].checked;

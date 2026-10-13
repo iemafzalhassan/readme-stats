@@ -18,8 +18,8 @@ export function initVisitors() {
   function getVisitorUrl() {
     const username =
       els["visitor-username"]?.value ||
-      document.getElementById("global-username").value ||
-      "iemafzalhassan";
+      document.getElementById("input-github-username")?.value ||
+      "octocat";
     const color = els["visitor-color"]?.value.replace("#", "") || "05CCCD";
     const label = els["visitor-label"]?.value || "VISITORS";
     const style = els["visitor-style"]?.value || "flat";

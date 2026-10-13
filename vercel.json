@@ -5,10 +5,18 @@
       "maxDuration": 10
     }
   },
-  "redirects": [
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
     {
       "source": "/",
-      "destination": "https://github.com/iemafzalhassan/readme-stats"
+      "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/((?!api/|frontend/).*)",
+      "destination": "/frontend/$1"
     }
   ]
 }

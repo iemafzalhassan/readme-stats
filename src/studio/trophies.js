@@ -1,6 +1,6 @@
 import axios from "axios";
-import { getCardColors } from "../src/common/color.js";
-import { renderError } from "../src/common/render.js";
+import { getCardColors } from "../common/color.js";
+import { renderError } from "../common/render.js";
 
 const escapeXml = (str = "") =>
   String(str)

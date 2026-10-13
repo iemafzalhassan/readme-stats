@@ -1,5 +1,5 @@
-import { getCardColors } from "../src/common/color.js";
-import { renderError } from "../src/common/render.js";
+import { getCardColors } from "../common/color.js";
+import { renderError } from "../common/render.js";
 
 const TECH_META = {
   javascript: { label: "JavaScript", abbr: "JS", accent: "#F7DF1E" },

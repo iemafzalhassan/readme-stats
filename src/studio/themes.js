@@ -1,4 +1,4 @@
-import { themes } from "../themes/index.js";
+import { themes } from "../../themes/index.js";
 
 export default async (req, res) => {
   res.setHeader("Content-Type", "application/json");

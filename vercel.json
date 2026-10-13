@@ -7,6 +7,26 @@
   },
   "rewrites": [
     {
+      "source": "/api/badges",
+      "destination": "/api/studio?endpoint=badges"
+    },
+    {
+      "source": "/api/icon",
+      "destination": "/api/studio?endpoint=icon"
+    },
+    {
+      "source": "/api/roadmap",
+      "destination": "/api/studio?endpoint=roadmap"
+    },
+    {
+      "source": "/api/themes",
+      "destination": "/api/studio?endpoint=themes"
+    },
+    {
+      "source": "/api/trophies",
+      "destination": "/api/studio?endpoint=trophies"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     },

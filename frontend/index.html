@@ -1,248 +1,672 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EdgeOps Profile Wizard</title>
-    <link rel="icon" href="/assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/wizard.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>readme-stats Studio — GitHub Profile & Telemetry Architect</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- TOP COMMAND HEADER -->
+    <header class="studio-topbar">
+      <div class="brand-cluster">
+        <div class="brand-mark">
+          <img src="/assets/favicon.svg" alt="readme-stats Studio Logo" />
+        </div>
+        <span class="brand-title">readme-stats</span>
+        <span class="brand-badge">STUDIO v2.1</span>
+      </div>
 
-    <!-- NAV -->
-    <header class="glass-header">
-        <div class="brand">
-            <img src="/assets/favicon.png" alt="EdgeOps">
-            <span>Profile Wizard</span>
-        </div>
-        <div class="header-actions">
-           <!-- Potential GitHub Link -->
-        </div>
+      <!-- Live GitHub Profile Auto-Scanner -->
+      <div class="scanner-bar">
+        <span class="scanner-prefix">github.com/</span>
+        <input
+          type="text"
+          id="input-github-username"
+          value="iemafzalhassan"
+          placeholder="Enter GitHub username..."
+          aria-label="GitHub Username"
+        />
+        <span id="scanner-status-pill" class="scanner-status">Ready</span>
+        <button
+          id="btn-fetch-github"
+          class="btn btn-primary btn-sm"
+          title="Auto-fetch public repos, bio & tech stack"
+        >
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Fetch
+        </button>
+      </div>
+
+      <!-- Primary Actions -->
+      <div class="topbar-actions">
+        <button
+          id="btn-toggle-ui-theme"
+          class="btn btn-ghost btn-icon"
+          title="Toggle Studio Dark/Light UI"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a
+          href="https://github.com/iemafzalhassan/readme-stats/fork"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost btn-sm"
+          title="Fork repository to self-host on Vercel"
+        >
+          <i class="fa-solid fa-code-fork"></i> Fork
+        </a>
+        <button id="btn-copy-md" class="btn btn-ghost btn-sm">
+          <i class="fa-regular fa-copy"></i> Copy .md
+        </button>
+        <button id="btn-download-md" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-download"></i> Download .md
+        </button>
+      </div>
     </header>
 
-    <!-- LANDING PAGE -->
-    <section id="landing-page" class="active">
-        <div class="hero">
-            <h1 class="hero-title">Forge Your <span class="gradient-text">GitHub Identity</span></h1>
-            <p class="hero-subtitle">Generates Stats, Streaks, Trophies, and Tech Stacks in one unified flow.</p>
-            <div class="hero-actions">
-                <button id="btn-start-wizard" class="btn btn-primary btn-lg">
-                    <i class="fa-solid fa-bolt"></i> Get Started
+    <!-- SPLIT-PANE STUDIO WORKSPACE -->
+    <main class="studio-workspace">
+      <!-- LEFT CONTROL DOCK -->
+      <aside class="control-dock">
+        <nav class="dock-nav" role="tablist">
+          <button class="dock-tab active" data-tab="panel-templates" role="tab">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Blueprint</span>
+          </button>
+          <button class="dock-tab" data-tab="panel-profile" role="tab">
+            <i class="fa-regular fa-id-badge"></i>
+            <span>Profile</span>
+          </button>
+          <button class="dock-tab" data-tab="panel-icons" role="tab">
+            <i class="fa-solid fa-shapes"></i>
+            <span>Icons</span>
+          </button>
+          <button class="dock-tab" data-tab="panel-themes" role="tab">
+            <i class="fa-solid fa-palette"></i>
+            <span>Themes</span>
+          </button>
+          <button class="dock-tab" data-tab="panel-cards" role="tab">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Cards</span>
+          </button>
+        </nav>
+
+        <div class="dock-panels">
+          <!-- PANEL 1: DOMAIN BLUEPRINTS -->
+          <section id="panel-templates" class="dock-panel active">
+            <div class="score-card">
+              <div>
+                <div class="panel-title">Profile Readiness & Role Fit</div>
+                <div id="readiness-summary" class="panel-subtitle">
+                  Click Auto-Fetch to analyze public repos & stack
+                </div>
+              </div>
+              <div id="readiness-score-badge" class="score-badge">92%</div>
+            </div>
+
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">
+                  Target Domain Blueprint (10 Tracks)
+                </div>
+                <div class="panel-subtitle">
+                  Aligned with roadmap.sh tracks for DevOps, Data, AIOps, SRE &
+                  more
+                </div>
+              </div>
+            </div>
+
+            <div id="domain-template-grid" class="template-grid"></div>
+          </section>
+
+          <!-- PANEL 2: PROFILE & REPOS -->
+          <section id="panel-profile" class="dock-panel">
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">Profile Identity & Socials</div>
+                <div class="panel-subtitle">
+                  Auto-populated from GitHub or customize manually
+                </div>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="field-label" for="input-display-name"
+                  >Display Name</label
+                >
+                <input
+                  type="text"
+                  id="input-display-name"
+                  class="field-input"
+                  value="Afzal Hassan"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-role-title"
+                  >Headline / Target Role</label
+                >
+                <input
+                  type="text"
+                  id="input-role-title"
+                  class="field-input"
+                  value="DevOps & Platform Engineer"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-company"
+                  >Company / Organization</label
+                >
+                <input
+                  type="text"
+                  id="input-company"
+                  class="field-input"
+                  placeholder="@EdgeOpsLabs"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-location">Location</label>
+                <input
+                  type="text"
+                  id="input-location"
+                  class="field-input"
+                  placeholder="India"
+                />
+              </div>
+              <div class="field-group full">
+                <label class="field-label" for="input-bio"
+                  >Executive Summary / Bio</label
+                >
+                <textarea id="input-bio" class="field-textarea">
+Automating cloud-native infrastructure, Kubernetes platforms, and open-source developer tools.</textarea
+                >
+              </div>
+              <div class="field-group full">
+                <label class="field-label" for="input-current-work"
+                  >Currently Building / Focus</label
+                >
+                <input
+                  type="text"
+                  id="input-current-work"
+                  class="field-input"
+                  value="High-availability Kubernetes clusters, GitOps pipelines & readme-stats Studio"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-linkedin"
+                  >LinkedIn Handle</label
+                >
+                <input
+                  type="text"
+                  id="input-linkedin"
+                  class="field-input"
+                  placeholder="iemafzalhassan"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-twitter"
+                  >X / Twitter Handle</label
+                >
+                <input
+                  type="text"
+                  id="input-twitter"
+                  class="field-input"
+                  placeholder="iemafzalhassan"
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-blog"
+                  >Portfolio / Website URL</label
+                >
+                <input
+                  type="text"
+                  id="input-blog"
+                  class="field-input"
+                  placeholder="https://..."
+                />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-email"
+                  >Public Contact Email</label
+                >
+                <input
+                  type="text"
+                  id="input-email"
+                  class="field-input"
+                  placeholder="you@domain.com"
+                />
+              </div>
+            </div>
+
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">Featured Public Repositories</div>
+                <div class="panel-subtitle">
+                  Select up to 6 auto-fetched repos to pin as SVG cards
+                </div>
+              </div>
+            </div>
+            <div id="repo-selector-list" class="toggle-list"></div>
+          </section>
+
+          <!-- PANEL 3: MULTI-PROVIDER ICON ENGINE + ROADMAP.SH -->
+          <section id="panel-icons" class="dock-panel">
+            <!-- roadmap.sh Domain Toolkit Sync -->
+            <div class="roadmap-box">
+              <div class="roadmap-box-top">
+                <div>
+                  <div class="panel-title">
+                    <i
+                      class="fa-solid fa-route"
+                      style="color: var(--accent-primary)"
+                    ></i>
+                    roadmap.sh Domain Toolkits
+                  </div>
+                  <div class="panel-subtitle">
+                    Load complete domain tool stacks or sync live via roadmap.sh
+                    JSON API
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-row">
+                <select id="select-roadmap-track" class="field-select">
+                  <option value="devops">
+                    roadmap.sh/devops (DevOps & Cloud)
+                  </option>
+                  <option value="data-engineer">
+                    roadmap.sh/data-engineer (Data Engineering)
+                  </option>
+                  <option value="ai-ml">
+                    roadmap.sh/mlops & ai-engineer (AIOps / MLOps)
+                  </option>
+                  <option value="platform-sre">
+                    roadmap.sh/devops (SRE & Observability)
+                  </option>
+                  <option value="devsecops">
+                    roadmap.sh/devsecops (DevSecOps & Cyber Security)
+                  </option>
+                  <option value="fullstack">
+                    roadmap.sh/full-stack (Full-Stack Engineering)
+                  </option>
+                  <option value="principal">
+                    roadmap.sh/software-architect (Staff / Principal)
+                  </option>
+                </select>
+                <button id="btn-sync-roadmap" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrows-rotate"></i> Load Stack
                 </button>
+              </div>
+              <div class="roadmap-row">
+                <input
+                  type="password"
+                  id="input-roadmap-api-key"
+                  class="field-input"
+                  placeholder="Optional: roadmap.sh Bearer API Key (public tracks work without key)"
+                />
+              </div>
             </div>
-            
-            <div class="hero-visual">
-                <!-- Abstract or Floating Cards Visual -->
-                <div class="floating-card c1">Stats</div>
-                <div class="floating-card c2">Streak</div>
-                <div class="floating-card c3">Stack</div>
+
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">1. Choose Free Icon Provider</div>
+                <div class="panel-subtitle">
+                  Switch between 6 icon engines & geometric frame styles
+                </div>
+              </div>
             </div>
+            <div id="icon-provider-grid" class="provider-list"></div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="field-label" for="select-icon-shape"
+                  >Icon Shape / Badge Variant</label
+                >
+                <select id="select-icon-shape" class="field-select"></select>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="input-icon-size">
+                  <span>Icon Size / Row Count</span>
+                  <span id="label-icon-size">40px · 8/row</span>
+                </label>
+                <input
+                  type="range"
+                  id="input-icon-size"
+                  min="28"
+                  max="56"
+                  step="4"
+                  value="40"
+                />
+              </div>
+            </div>
+
+            <label class="toggle-row">
+              <div class="toggle-row-label">
+                <span class="toggle-row-title"
+                  >Sync Badge & Icon Colors with Active Theme</span
+                >
+                <span class="toggle-row-sub"
+                  >Tints Shields.io & vector icons to match your selected README
+                  theme</span
+                >
+              </div>
+              <input type="checkbox" id="check-theme-sync-icons" />
+            </label>
+
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">
+                  2. Select Domain Tools (<span id="selected-icon-count"
+                    >0</span
+                  >
+                  selected)
+                </div>
+                <div class="panel-subtitle">
+                  135+ verified icons across DevOps, Data, AIOps, Security &
+                  Full-Stack
+                </div>
+              </div>
+              <button id="btn-clear-icons" class="btn btn-ghost btn-sm">
+                Clear
+              </button>
+            </div>
+
+            <div id="icon-category-bar" class="pill-bar"></div>
+            <input
+              type="text"
+              id="input-icon-search"
+              class="field-input"
+              placeholder="Search 135+ tools (Spark, Airflow, dbt, Kafka, Kubernetes, Vault, MLflow...)"
+            />
+            <div id="icon-catalog-grid" class="icon-picker-grid"></div>
+          </section>
+
+          <!-- PANEL 4: 75+ THEME PALETTE STUDIO -->
+          <section id="panel-themes" class="dock-panel">
+            <div class="active-theme-inspector">
+              <div class="panel-header" style="padding-bottom: 0.35rem">
+                <div>
+                  <div class="panel-title">
+                    Active Theme:
+                    <code
+                      id="active-theme-label"
+                      style="color: var(--accent-primary-hover)"
+                      >tokyonight</code
+                    >
+                  </div>
+                  <div class="panel-subtitle">
+                    Updates cards, trophies, badges, headings & preview canvas
+                    in real time
+                  </div>
+                </div>
+              </div>
+              <div id="active-theme-hex-pills" class="theme-hex-pills"></div>
+              <label class="toggle-row" style="margin-top: 0.2rem">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Apply Theme Surface & Accent Colors to Live Preview</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Styles README background, headings & code blocks with the
+                    active theme</span
+                  >
+                </div>
+                <input type="checkbox" id="check-sync-preview-theme" checked />
+              </label>
+            </div>
+
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">
+                  Global Theme Library (<span id="theme-total-count">76</span>
+                  Palettes)
+                </div>
+                <div class="panel-subtitle">
+                  Click any theme to preview across all SVG cards & icons
+                </div>
+              </div>
+            </div>
+
+            <input
+              type="text"
+              id="input-theme-search"
+              class="field-input"
+              placeholder="Search theme (tokyonight, dracula, catppuccin, edgeopslabs, gotham, gruvbox...)"
+            />
+            <div id="theme-swatch-grid" class="theme-grid"></div>
+          </section>
+
+          <!-- PANEL 5: CARDS & TELEMETRY -->
+          <section id="panel-cards" class="dock-panel">
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">SVG Telemetry Cards & Add-ons</div>
+                <div class="panel-subtitle">
+                  All cards work out-of-the-box with built-in Public GitHub API
+                  fallbacks
+                </div>
+              </div>
+            </div>
+
+            <div class="toggle-list">
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >GitHub Overall Stats Card (<code>/api</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Stars, commits, PRs, issues & calculated S+/A+ rank</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-stats" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Commit Streak Card (<code>/api/streak</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Total contributions, current streak & longest streak</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-streak" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Top Languages Card (<code>/api/top-langs</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Automated language breakdown across public
+                    repositories</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-langs" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Featured Repo Pin Cards (<code>/api/pin</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Renders SVG cards for repositories selected in the Profile
+                    tab</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-pinned" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Native GitHub Trophy Rack
+                    (<code>/api/trophies</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Self-hosted SVG achievement trophies synced to your active
+                    theme</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-trophies" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Profile Visitor Counter (<code>/api/visitor</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Live hit counter badge in your profile header</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-visitor" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Daily Engineering Quote Card
+                    (<code>/api/quotes</code>)</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Theme-synced wisdom card at the bottom of your README</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-quotes" checked />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title">Hide SVG Card Borders</span>
+                  <span class="toggle-row-sub"
+                    >Seamless borderless look on dark/light GitHub
+                    backgrounds</span
+                  >
+                </div>
+                <input type="checkbox" id="check-hide-border" />
+              </label>
+
+              <label class="toggle-row">
+                <div class="toggle-row-label">
+                  <span class="toggle-row-title"
+                    >Include "Crafted with readme-stats" Badge</span
+                  >
+                  <span class="toggle-row-sub"
+                    >Helps others discover, fork, and star your repository</span
+                  >
+                </div>
+                <input type="checkbox" id="check-show-watermark" checked />
+              </label>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="field-label" for="select-langs-layout"
+                  >Top Languages Layout</label
+                >
+                <select id="select-langs-layout" class="field-select">
+                  <option value="compact">Compact Progress Bar</option>
+                  <option value="donut">Donut Chart</option>
+                  <option value="donut-vertical">Vertical Donut</option>
+                  <option value="pie">Pie Chart</option>
+                  <option value="normal">Standard List</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="select-quote-layout"
+                  >Quote Card Layout</label
+                >
+                <select id="select-quote-layout" class="field-select">
+                  <option value="horizontal">Horizontal Banner</option>
+                  <option value="vertical">Vertical Card</option>
+                </select>
+              </div>
+            </div>
+          </section>
         </div>
-    </section>
+      </aside>
 
-    <!-- WIZARD CONTAINER -->
-    <section id="wizard-container" class="hidden">
-        
-        <!-- Progress Bar -->
-        <div class="wizard-progress">
-            <div class="progress-track">
-                <div class="progress-fill" id="progress-fill"></div>
-            </div>
-            <div class="step-indicators">
-                <div class="step-dot active" data-step="1">1</div>
-                <div class="step-dot" data-step="2">2</div>
-                <div class="step-dot" data-step="3">3</div>
-                <div class="step-dot" data-step="4">4</div>
-                <div class="step-dot" data-step="5">5</div>
-                <div class="step-dot" data-step="6">6</div>
-                <div class="step-dot" data-step="7">7</div>
-                <div class="step-dot" data-step="8">8</div>
-            </div>
-            <div class="step-label" id="step-label">Profile Basics</div>
+      <!-- RIGHT LIVE CANVAS -->
+      <section class="canvas-pane">
+        <div class="canvas-toolbar">
+          <div class="canvas-tabs">
+            <button id="tab-btn-preview" class="canvas-tab-btn active">
+              <i class="fa-regular fa-eye"></i> Live GitHub Preview
+            </button>
+            <button id="tab-btn-markdown" class="canvas-tab-btn">
+              <i class="fa-solid fa-code"></i> Raw Markdown (.md)
+            </button>
+          </div>
+
+          <div class="canvas-toolbar-right">
+            <button
+              id="btn-toggle-gh-canvas"
+              class="btn btn-ghost btn-sm"
+              title="Switch simulated GitHub background between Dark and Light"
+            >
+              <i class="fa-solid fa-circle-half-stroke"></i> GitHub Dark Canvas
+            </button>
+            <a
+              id="link-open-gh-profile"
+              href="https://github.com/iemafzalhassan"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost btn-sm"
+            >
+              <i class="fa-brands fa-github"></i> Open Profile
+            </a>
+          </div>
         </div>
 
-        <div class="wizard-content">
-            
-            <!-- STEP 1: Profile -->
-            <div class="wizard-step active" id="step-1">
-                <h2>Who are you?</h2>
-                <div class="input-group">
-                    <label>GitHub Username</label>
-                    <input type="text" id="global-username" placeholder="username" value="iemafzalhassan">
-                </div>
-                <div class="input-group">
-                    <label>Preferred Global Theme</label>
-                    <select id="global-theme">
-                        <option value="edgeopslabs">EdgeOps Labs</option>
-                        <option value="radical">Radical</option>
-                        <option value="tokyonight">Tokyo Night</option>
-                        <option value="default">Default</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- STEP 2: Tech Stack -->
-            <div class="wizard-step" id="step-2">
-                <h2>Tech Stack</h2>
-                <p class="step-desc">Select technologies you use.</p>
-                
-                <div class="config-grid">
-                    <div class="input-group">
-                        <label>Search</label>
-                        <input type="text" id="tech-search" placeholder="React, Go...">
-                        <div id="tech-icon-list" class="chip-list"></div>
-                    </div>
-                    <div class="preview-box">
-                         <div id="tech-stack-preview"></div>
-                         <button class="btn btn-sm btn-secondary" id="btn-clear-stack">Clear Stack</button>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label>Badge Style</label>
-                    <select id="tech-style">
-                        <option value="plastic">Plastic</option>
-                        <option value="flat">Flat</option>
-                        <option value="for-the-badge">For-the-Badge</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- STEP 3: Streak Stats -->
-            <div class="wizard-step" id="step-3">
-                <h2>Streak Stats</h2>
-                <div class="card-preview-wrapper" id="preview-streak">
-                    <!-- Live Preview Injected Here -->
-                </div>
-                <div class="options-row">
-                    <label><input type="checkbox" id="streak-hide-border"> Hide Border</label>
-                    <label><input type="checkbox" id="streak-hide-title"> Hide Title</label>
-                </div>
-            </div>
-
-            <!-- STEP 4: GitHub Stats -->
-            <div class="wizard-step" id="step-4">
-                <h2>GitHub Stats</h2>
-                <div class="card-preview-wrapper" id="preview-stats">
-                    <!-- Live Preview -->
-                </div>
-                <div class="options-grid">
-                    <label><input type="checkbox" id="stats-hide-border"> Hide Border</label>
-                    <label><input type="checkbox" id="stats-show-icons" checked> Show Icons</label>
-                    <label><input type="checkbox" id="stats-include-commits" checked> Include All Commits</label>
-                    <label><input type="checkbox" id="stats-hide-rank"> Hide Rank</label>
-                </div>
-            </div>
-
-            <!-- STEP 5: Trophies -->
-            <div class="wizard-step" id="step-5">
-                <h2>Trophies</h2>
-                <div class="card-preview-wrapper" id="preview-trophies"></div>
-                <div class="input-group">
-                    <label>Theme</label>
-                    <select id="trophy-theme">
-                        <option value="flat">Flat</option>
-                        <option value="onedark">OneDark</option>
-                        <option value="gruvbox">Gruvbox</option>
-                        <option value="dracula">Dracula</option>
-                        <option value="monokai">Monokai</option>
-                        <option value="alduin">Alduin</option>
-                        <option value="darkhub">Darkhub</option>
-                        <option value="juicyfresh">JuicyFresh</option>
-                        <option value="bray_jones">Bray Jones</option>
-                        <option value="green">Green</option>
-                        <option value="medium">Medium</option>
-                        <option value="yeblu">Yeblu</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- STEP 6: Quotes -->
-            <div class="wizard-step" id="step-6">
-                <h2>Daily Quote</h2>
-                <div class="card-preview-wrapper" id="preview-quotes"></div>
-                <div class="input-group">
-                    <label>Quote Theme</label>
-                    <select id="quote-theme">
-                        <option value="radical">Radical</option>
-                        <option value="tokyonight">Tokyo Night</option>
-                        <option value="dark">Dark</option>
-                    </select>
-                </div>
-                 <div class="input-group">
-                    <label>Layout</label>
-                    <select id="quote-layout">
-                        <option value="vertical">Vertical</option>
-                        <option value="horizontal">Horizontal</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- STEP 7: Visitors -->
-            <div class="wizard-step" id="step-7">
-                <h2>Visitor Count</h2>
-                <div class="card-preview-wrapper" id="preview-visitors"></div>
-                <div class="input-group">
-                     <label>Label</label>
-                     <input type="text" id="visitor-label" value="VISITORS">
-                </div>
-                <div class="input-group">
-                     <label>Badge Style</label>
-                     <select id="visitor-style">
-                         <option value="flat">Flat</option>
-                         <option value="flat-square">Flat Square</option>
-                         <option value="plastic">Plastic</option>
-                         <option value="for-the-badge">For-the-Badge</option>
-                         <option value="social">Social</option>
-                     </select>
-                </div>
-                 <div class="input-group">
-                     <label>Color</label>
-                     <input type="color" id="visitor-color" value="#05CCCD">
-                </div>
-                <div class="input-group">
-                    <label>Theme (Overrides Color)</label>
-                    <select id="visitor-theme">
-                        <option value="">-- Custom Color --</option>
-                        <option value="edgeopslabs">EdgeOps Labs</option>
-                        <option value="radical">Radical</option>
-                        <option value="tokyonight">Tokyo Night</option>
-                        <option value="gruvbox">Gruvbox</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- STEP 8: Finalize -->
-            <div class="wizard-step" id="step-8">
-                <h2>Your Profile is Ready!</h2>
-                <p>Copy the code below into your README.md</p>
-                
-                <textarea id="final-markdown" class="code-block" readonly></textarea>
-                
-                <div class="final-actions">
-                    <button class="btn btn-primary" id="btn-copy-final"><i class="fa-regular fa-clipboard"></i> Copy All</button>
-                    <!-- <button class="btn btn-secondary" id="btn-download-assets">⬇ Download Assets</button> -->
-                </div>
-            </div>
-
+        <!-- Self-Host / Fork Viral URL Rewriter -->
+        <div class="selfhost-bar">
+          <span>
+            <i class="fa-solid fa-bolt" style="color: var(--accent-amber)"></i>
+            <b>Self-Host Ready:</b> Deployed your own Vercel fork? Set your
+            domain to rewrite all card URLs:
+          </span>
+          <div class="selfhost-input-wrap">
+            <input
+              type="text"
+              id="input-base-url"
+              placeholder="https://your-fork.vercel.app"
+              aria-label="Custom Vercel Instance URL"
+            />
+            <button id="btn-reset-base-url" class="btn btn-ghost btn-sm">
+              Use Current Host
+            </button>
+          </div>
         </div>
 
-        <!-- Wizard Nav -->
-        <div class="wizard-footer">
-            <button class="btn btn-secondary" id="btn-prev" disabled>Back</button>
-            <button class="btn btn-primary" id="btn-next">Next</button>
+        <div class="canvas-body">
+          <!-- Rendered README Preview -->
+          <div id="live-readme-preview" class="github-readme-frame"></div>
+
+          <!-- Raw Markdown View -->
+          <textarea
+            id="raw-markdown-output"
+            class="markdown-code-editor hidden"
+            spellcheck="false"
+            aria-label="Generated Markdown Code"
+          ></textarea>
         </div>
+      </section>
+    </main>
 
-    </section>
-
-    <footer>
-        <p>Powered by EdgeOps Labs</p>
-        <p>Made with love <span class="heart-beat"><i class="fa-solid fa-heart"></i></span></p>
-    </footer>
+    <div id="studio-toast" class="studio-toast">Copied to clipboard</div>
 
     <script type="module" src="js/main.js"></script>
-</body>
+  </body>
 </html>

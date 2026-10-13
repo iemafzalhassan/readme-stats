@@ -7,7 +7,11 @@ import gistCard from "./api/gist.js";
 import streakCard from "./api/streak.js";
 import quotesCard from "./api/quotes.js";
 import visitorCard from "./api/visitor.js";
-import { themes } from "./themes/index.js";
+import themesEndpoint from "./api/themes.js";
+import badgesCard from "./api/badges.js";
+import trophiesCard from "./api/trophies.js";
+import iconEndpoint from "./api/icon.js";
+import roadmapEndpoint from "./api/roadmap.js";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -19,9 +23,11 @@ const app = express();
 const router = express.Router();
 
 router.get("/", statsCard);
-router.get("/themes", (req, res) => {
-  res.json(Object.keys(themes));
-});
+router.get("/themes", themesEndpoint);
+router.get("/badges", badgesCard);
+router.get("/trophies", trophiesCard);
+router.get("/icon", iconEndpoint);
+router.get("/roadmap", roadmapEndpoint);
 router.get("/pin", repoCard);
 router.get("/top-langs", langCard);
 router.get("/wakatime", wakatimeCard);
@@ -36,5 +42,5 @@ app.use(express.static(path.join(__dirname, "frontend")));
 
 const port = process.env.PORT || process.env.port || 4700;
 app.listen(port, "0.0.0.0", () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });

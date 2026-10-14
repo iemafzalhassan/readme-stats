@@ -62,7 +62,7 @@ export default async (req, res) => {
     }
 
     const colors = getCardColors({
-      theme: theme || "edgeopslabs",
+      theme: theme || "default",
       title_color,
       text_color,
       icon_color,

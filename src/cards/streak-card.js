@@ -72,7 +72,7 @@ class StreakCard extends Card {
              
              <!-- Current Streak -->
              <g transform="translate(0, 35)">
-                 <text class="stat bold" y="12.5" style="fill:${this.colors.theme === "edgeopslabs" ? "#EF960F" : textColor}">Current Streak:</text>
+                 <text class="stat bold" y="12.5" style="fill:${textColor}">Current Streak:</text>
                  <text class="stat" x="200" y="12.5" data-testid="current-streak">${currentStreak} days</text>
              </g>
              

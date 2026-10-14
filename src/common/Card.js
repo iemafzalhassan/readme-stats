@@ -266,12 +266,6 @@ class Card {
         >
           ${body}
         </g>
-
-        <g data-testid="attribution" transform="translate(${this.width - 25}, ${this.height - 15})">
-          <a href="https://github.com/EdgeOpslabs">
-            <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="${this.colors.textColor}" opacity="0.8">Powered by EdgeOps Labs</text>
-          </a>
-        </g>
       </svg>
     `;
   }

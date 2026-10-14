@@ -18,13 +18,6 @@ const FALLBACK_THEMES = {
     text_color: "38bdae",
     bg_color: "1a1b27",
   },
-  edgeopslabs: {
-    title_color: "FFFFFF",
-    icon_color: "05CCCD",
-    text_color: "60C0E9",
-    bg_color: "104BAF",
-    border_color: "FFFFFF",
-  },
   catppuccin_mocha: {
     title_color: "94e2d5",
     icon_color: "cba6f7",
@@ -162,10 +155,10 @@ const state = {
   themeSyncIcons: false,
   selectedIcons: [...STACK_PRESETS.devops],
   availableRepos: [
-    { name: "cloud-platform", stars: 128, language: "Go" },
-    { name: "web-framework", stars: 94, language: "TypeScript" },
+    { name: "github-readme-stats", stars: 65000, language: "JavaScript" },
+    { name: "convos", stars: 800, language: "TypeScript" },
   ],
-  selectedRepos: ["cloud-platform", "web-framework"],
+  selectedRepos: ["github-readme-stats"],
   showStats: true,
   showStreak: true,
   showTopLangs: true,

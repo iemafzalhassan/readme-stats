@@ -168,7 +168,7 @@ export function initWizard() {
   }
 
   function getTheme() {
-    return document.getElementById("global-theme").value || "edgeopslabs";
+    return document.getElementById("global-theme").value || "default";
   }
 
   function renderImage(containerId, url) {
@@ -235,9 +235,6 @@ export function initWizard() {
       document.getElementById("trophy-username")?.value || username;
     md += `### 🏆 Trophies\n`;
     md += `![Trophies](https://github-profile-trophy.vercel.app/?username=${trophyUser}&theme=${trophyTheme}&no-frame=true&no-bg=true&margin-w=4)\n`;
-
-    // Footer
-    md += `\n---\nPossible by [EdgeOps Labs](https://github.com/EdgeOpslabs)`;
 
     document.getElementById("final-markdown").value = md;
   }

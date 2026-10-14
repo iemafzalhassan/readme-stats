@@ -37,7 +37,7 @@ export const DOMAIN_TEMPLATES = [
     roleTag: "roadmap.sh/devops · Kubernetes · Observability · SLOs",
     badge: "SRE / PLATFORM",
     defaultTheme: "gruvbox",
-    defaultProvider: "edgeops-svg",
+    defaultProvider: "custom-svg",
     defaultShape: "hexagon",
     desc: "Reliability engineering blueprint with eBPF/Service Mesh, Hexagon SVG stack card, OpenTelemetry, and streak stats.",
   },
@@ -47,7 +47,7 @@ export const DOMAIN_TEMPLATES = [
     roleTag: "roadmap.sh/devsecops · Zero-Trust · Supply Chain Security",
     badge: "DEVSECOPS",
     defaultTheme: "gotham",
-    defaultProvider: "edgeops-svg",
+    defaultProvider: "custom-svg",
     defaultShape: "pill",
     desc: "Security-first profile highlighting container scanning, Vault secrets management, IAM, and hardened infrastructure.",
   },
@@ -111,7 +111,8 @@ function buildSocialBadges(state, themeColors) {
 
   const badges = [];
   if (state.showVisitor) {
-    const vUrl = `${state.baseUrl}/api/visitor?username=${encodeURIComponent(state.username)}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}`;
+    const vUser = encodeURIComponent(state.username || "anuraghazra");
+    const vUrl = `${state.baseUrl}/api/visitor?username=${vUser}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}`;
     badges.push(`<img src="${vUrl}" alt="Visitors" />`);
   }
   if (state.linkedin) {
@@ -152,9 +153,10 @@ function buildPinnedReposSection(state) {
   ) {
     return "";
   }
+  const repoUser = encodeURIComponent(state.username || "anuraghazra");
   const cards = state.selectedRepos.slice(0, 6).map((repoName) => {
-    const pinUrl = `${state.baseUrl}/api/pin?username=${encodeURIComponent(state.username)}&repo=${encodeURIComponent(repoName)}&theme=${encodeURIComponent(state.theme)}&hide_border=${state.hideBorder}`;
-    return `  <a href="https://github.com/${encodeURIComponent(state.username)}/${encodeURIComponent(repoName)}">\n    <img src="${pinUrl}" alt="${repoName}" />\n  </a>`;
+    const pinUrl = `${state.baseUrl}/api/pin?username=${repoUser}&repo=${encodeURIComponent(repoName)}&theme=${encodeURIComponent(state.theme)}&hide_border=${state.hideBorder}`;
+    return `  <a href="https://github.com/${repoUser}/${encodeURIComponent(repoName)}">\n    <img src="${pinUrl}" alt="${repoName}" />\n  </a>`;
   });
 
   return `### Featured Repositories\n\n<p align="center">\n${cards.join("\n")}\n</p>\n\n`;
@@ -162,7 +164,7 @@ function buildPinnedReposSection(state) {
 
 function buildMetricsSection(state) {
   const parts = [];
-  const u = encodeURIComponent(state.username);
+  const u = encodeURIComponent(state.username || "anuraghazra");
   const t = encodeURIComponent(state.theme);
   const hb = state.hideBorder ? "true" : "false";
 
@@ -188,7 +190,7 @@ function buildMetricsSection(state) {
 
 function buildAddonsSection(state) {
   let out = "";
-  const u = encodeURIComponent(state.username);
+  const u = encodeURIComponent(state.username || "anuraghazra");
   const t = encodeURIComponent(state.theme);
   const hb = state.hideBorder ? "true" : "false";
 

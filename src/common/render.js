@@ -182,12 +182,6 @@ const renderError = ({
       <tspan x="25" dy="18">${encodeHTML(message)}</tspan>
       <tspan x="25" dy="18" class="gray">${secondaryMessage}</tspan>
     </text>
-
-    <g data-testid="attribution" transform="translate(${ERROR_CARD_LENGTH - 25}, ${120 - 15})">
-      <a href="https://github.com/EdgeOpslabs">
-        <text x="0" y="0" text-anchor="end" font-size="10" font-weight="600" fill="${textColor}" opacity="0.8">Powered by EdgeOps Labs</text>
-      </a>
-    </g>
     </svg>
   `;
 };

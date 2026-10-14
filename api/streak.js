@@ -22,7 +22,7 @@ export default async (req, res) => {
     setCacheHeaders(res, cacheSeconds);
 
     const card = new StreakCard({
-      theme: theme || "edgeopslabs",
+      theme: theme || "default",
       hide_border: parseBoolean(hide_border),
       hide_title: parseBoolean(hide_title),
       hide_rank: parseBoolean(hide_rank),

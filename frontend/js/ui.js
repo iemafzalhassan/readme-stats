@@ -2,7 +2,7 @@ const CONFIG = {
   apiBase: window.location.origin + "/api",
   defaults: {
     username: "octocat",
-    theme: "edgeopslabs",
+    theme: "default",
     hide_border: false,
     hide_title: false,
     hide_rank: false,
@@ -134,10 +134,10 @@ const UI = {
 
       this.elements.themeSelector.innerHTML = "";
 
-      // Sort: edgeopslabs first, then alphabetical
+      // Sort: default first, then alphabetical
       themes.sort((a, b) => {
-        if (a === "edgeopslabs") return -1;
-        if (b === "edgeopslabs") return 1;
+        if (a === "default") return -1;
+        if (b === "default") return 1;
         return a.localeCompare(b);
       });
 

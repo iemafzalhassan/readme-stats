@@ -60,8 +60,8 @@ export const ICON_PROVIDERS = [
     ],
   },
   {
-    id: "edgeops-svg",
-    name: "EdgeOps Custom SVG Engine",
+    id: "custom-svg",
+    name: "Custom SVG Engine",
     badge: "Hexagon / Circle / Glass",
     url: "/api/badges",
     desc: "Serverless SVG card rendered by your own repo in geometric frames.",
@@ -1549,7 +1549,7 @@ export function renderTechStackMarkdown({
     return `<p align="center">\n  <a href="https://skillicons.dev">\n    <img src="${url}" alt="Tech Stack" />\n  </a>\n</p>`;
   }
 
-  if (provider === "edgeops-svg") {
+  if (provider === "custom-svg") {
     const keys = icons.map((i) => i.id).join(",");
     const validShape = [
       "hexagon",

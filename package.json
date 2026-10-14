@@ -1,7 +1,7 @@
 {
-  "name": "@edgeopslabs/readme-stats",
+  "name": "github-readme-stats",
   "version": "1.0.0",
-  "description": "Dynamically generate stats for your GitHub readme - Powered by EdgeOps Labs",
+  "description": "Dynamically generate stats for your GitHub readme",
   "keywords": [
     "readme-stats",
     "readme-stats",

@@ -12,13 +12,6 @@ export const themes = {
     text_color: "434d58",
     bg_color: "fffefe",
   },
-  edgeopslabs: {
-    title_color: "FFFFFF",
-    icon_color: "05CCCD",
-    text_color: "60C0E9",
-    bg_color: "104BAF",
-    border_color: "FFFFFF",
-  },
   transparent: {
     title_color: "006AFF",
     icon_color: "0579C3",

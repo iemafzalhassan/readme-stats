@@ -112,7 +112,7 @@ function buildSocialBadges(state, themeColors) {
   const badges = [];
   if (state.showVisitor) {
     const vUser = encodeURIComponent(state.username || "anuraghazra");
-    const vUrl = `${state.baseUrl}/api/visitor?username=${vUser}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}&v=v2.1`;
+    const vUrl = `${state.baseUrl}/api/visitor?username=${vUser}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}&v=v0.2.0`;
     badges.push(`<img src="${vUrl}" alt="Visitors" />`);
   }
   if (state.linkedin) {
@@ -157,7 +157,7 @@ function buildPinnedReposSection(state) {
   const customQuery = state.customColors
     ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
     : "";
-  const vParam = "&v=v2.1";
+  const vParam = "&v=v0.2.0";
 
   const cards = state.selectedRepos.slice(0, 6).map((repoName) => {
     const pinUrl = `${state.baseUrl}/api/pin?username=${repoUser}&repo=${encodeURIComponent(repoName)}&theme=${encodeURIComponent(state.theme)}&hide_border=${state.hideBorder}${customQuery}${vParam}`;
@@ -175,7 +175,7 @@ function buildMetricsSection(state) {
   const customQuery = state.customColors
     ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
     : "";
-  const vParam = "&v=v2.1";
+  const vParam = "&v=v0.2.0";
 
   if (state.showStats) {
     const statsUrl = `${state.baseUrl}/api?username=${u}&theme=${t}&show_icons=${state.showIcons}&include_all_commits=${state.includeAllCommits}&hide_rank=${state.hideRank}&hide_border=${hb}${customQuery}${vParam}`;
@@ -194,7 +194,7 @@ function buildMetricsSection(state) {
 
   if (parts.length === 0) return "";
 
-  return `### Engineering Telemetry & Activity\n\n<p align="center">\n${parts.join("\n")}\n</p>\n\n`;
+  return `### GitHub Activity & Stats\n\n<p align="center">\n${parts.join("\n")}\n</p>\n\n`;
 }
 
 function buildAddonsSection(state) {
@@ -205,7 +205,7 @@ function buildAddonsSection(state) {
   const customQuery = state.customColors
     ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
     : "";
-  const vParam = "&v=v2.1";
+  const vParam = "&v=v0.2.0";
 
   if (state.showTrophies) {
     out += `### GitHub Achievements\n\n<p align="center">\n  <img src="${state.baseUrl}/api/trophies?username=${u}&theme=${t}&hide_border=${hb}${customQuery}${vParam}" alt="Trophies" />\n</p>\n\n`;

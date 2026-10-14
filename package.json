@@ -1,6 +1,6 @@
 {
-  "name": "github-readme-stats",
-  "version": "1.0.0",
+  "name": "readme-stats",
+  "version": "0.2.0",
   "description": "Dynamic GitHub stats, streak, top languages, trophies, tech stack badges, and interactive profile studio for your README",
   "keywords": [
     "readme-stats",

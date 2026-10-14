@@ -156,10 +156,10 @@ const state = {
   themeSyncIcons: false,
   selectedIcons: [...STACK_PRESETS.devops],
   availableRepos: [
-    { name: "github-readme-stats", stars: 65000, language: "JavaScript" },
-    { name: "convos", stars: 800, language: "TypeScript" },
+    { name: "readme-stats", stars: 120, language: "JavaScript" },
+    { name: "convos", stars: 80, language: "TypeScript" },
   ],
-  selectedRepos: ["github-readme-stats"],
+  selectedRepos: ["readme-stats"],
   showStats: true,
   showStreak: true,
   showTopLangs: true,

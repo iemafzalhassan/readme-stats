@@ -62,7 +62,7 @@ class StreakCard extends Card {
     this.setCSS(css);
 
     const body = `
-       <g transform="translate(0, 55)">
+       <g transform="translate(0, 15)">
          <svg x="25">
              <!-- Total Contributions -->
              <g transform="translate(0, 0)">

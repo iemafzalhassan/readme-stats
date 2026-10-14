@@ -515,12 +515,15 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  min-width: 0;
 }
 
 .template-name {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-primary);
+  min-width: 0;
+  word-break: break-word;
 }
 
 .template-pill {
@@ -531,18 +534,21 @@ body {
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.07);
   color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
 .template-role {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--accent-primary-hover);
+  word-break: break-all;
 }
 
 .template-desc {
   font-size: 0.72rem;
   color: var(--text-secondary);
   line-height: 1.38;
+  word-break: break-word;
 }
 
 /* Form Controls */
@@ -1004,6 +1010,8 @@ body {
   font-size: 0.79rem;
   color: var(--readme-text);
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
   margin-bottom: 1rem;
 }
 
@@ -1040,8 +1048,10 @@ body {
 
 .github-readme-frame img {
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
   margin: 3px;
+  box-sizing: border-box;
 }
 
 /* Raw Markdown Code Editor */

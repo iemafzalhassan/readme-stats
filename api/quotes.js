@@ -2,6 +2,7 @@ import axios from "axios";
 import { renderError } from "../src/common/render.js";
 import { Card } from "../src/common/Card.js";
 import { getCardColors } from "../src/common/color.js";
+import { encodeHTML } from "../src/common/html.js";
 
 // Simple text wrapper if not in utils
 const wrapTextLines = (text, maxChars) => {
@@ -70,9 +71,17 @@ export default async (req, res) => {
       border_color,
     });
 
+    // Wrap text
+    const lines = wrapTextLines(content, 48);
+    const quoteLineHeight = 22;
+    const contentHeight = Math.max(
+      160,
+      65 + lines.length * quoteLineHeight + 45,
+    );
+
     const card = new Card({
-      width: 400,
-      height: 200,
+      width: 450,
+      height: contentHeight + 30, // +30 compensates for setHideTitle(true) deducting 30
       colors,
     });
 
@@ -81,25 +90,24 @@ export default async (req, res) => {
 
     // Style
     const css = `
-        .quote-text { font: 500 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${colors.textColor}; }
-        .quote-author { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${colors.titleColor}; }
+        .quote-text { font: 500 15px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${colors.textColor}; }
+        .quote-author { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: ${colors.titleColor}; }
     `;
     card.setCSS(css);
 
-    // Wrap text
-    const lines = wrapTextLines(content, 45); // Approx chars
     const textSvg = lines
       .map(
         (line, i) =>
-          `<text class="quote-text" x="50%" y="${50 + i * 22}" text-anchor="middle">${line}</text>`,
+          `<text class="quote-text" x="50%" y="${45 + i * quoteLineHeight}" text-anchor="middle">${encodeHTML(line)}</text>`,
       )
       .join("");
 
+    const authorY = 45 + lines.length * quoteLineHeight + 25;
     const body = `
-        <g transform="translate(0, 20)">
-            <text class="quote-text" x="50%" y="30" text-anchor="middle" font-size="30">❝</text>
+        <g transform="translate(0, 10)">
+            <text class="quote-text" x="50%" y="20" text-anchor="middle" font-size="28">❝</text>
             ${textSvg}
-            <text class="quote-author" x="50%" y="${50 + lines.length * 22 + 30}" text-anchor="middle">- ${author}</text>
+            <text class="quote-author" x="50%" y="${authorY}" text-anchor="middle">- ${encodeHTML(author)}</text>
         </g>
     `;
 

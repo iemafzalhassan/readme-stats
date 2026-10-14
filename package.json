@@ -1,12 +1,17 @@
 {
   "name": "github-readme-stats",
   "version": "1.0.0",
-  "description": "Dynamically generate stats for your GitHub readme",
+  "description": "Dynamic GitHub stats, streak, top languages, trophies, tech stack badges, and interactive profile studio for your README",
   "keywords": [
     "readme-stats",
-    "readme-stats",
-    "cards",
-    "card-generator"
+    "github-readme-stats",
+    "github-stats",
+    "svg-cards",
+    "streak-stats",
+    "profile-studio",
+    "trophies",
+    "tech-stack-badges",
+    "vercel-serverless"
   ],
   "main": "src/index.js",
   "type": "module",

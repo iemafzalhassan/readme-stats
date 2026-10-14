@@ -1,955 +1,423 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/iemafzalhassan/image/upload/v1594908242/logo_ccswme.svg" width="100px" alt="GitHub Readme Stats" />
-  <h1 style="font-size: 28px; margin: 10px 0;">GitHub Readme Stats</h1>
-  <p>Get dynamically generated GitHub stats on your READMEs!</p>
+  <img src="./frontend/assets/favicon.svg" width="90" alt="readme-stats Logo" />
+  <h1 style="font-size: 32px; margin: 12px 0 6px;">readme-stats · Studio v2.1</h1>
+  <p><b>Dynamic GitHub stats, contribution streaks, top languages, trophies, tech stack badges, and interactive profile studio for your README.</b></p>
+
+  <p>
+    <a href="https://readme-stats-olive-nu.vercel.app">
+      <img src="https://img.shields.io/badge/Launch%20Live%20Studio-Studio%20v2.1-6366f1?style=for-the-badge&logo=rocket&logoColor=white" alt="Launch Live Studio" />
+    </a>
+    <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fiemafzalhassan%2Freadme-stats&env=PAT_1&project-name=readme-stats">
+      <img src="https://img.shields.io/badge/Deploy%20to-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white" alt="Deploy to Vercel" />
+    </a>
+  </p>
+
+  <p>
+    <a href="https://github.com/iemafzalhassan/readme-stats/actions">
+      <img alt="Tests Passing" src="https://img.shields.io/badge/tests-27%20passed%20%7C%20242%20tests-10b981?style=flat-square&logo=jest" />
+    </a>
+    <a href="https://github.com/iemafzalhassan/readme-stats/releases">
+      <img alt="Release" src="https://img.shields.io/badge/release-v0.2.0-38bdf8?style=flat-square&logo=github" />
+    </a>
+    <a href="https://github.com/iemafzalhassan/readme-stats/blob/main/LICENSE">
+      <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-f59e0b?style=flat-square" />
+    </a>
+    <a href="https://github.com/iemafzalhassan/readme-stats/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/iemafzalhassan/readme-stats?style=flat-square&color=6366f1" />
+    </a>
+    <a href="https://readme-stats-olive-nu.vercel.app">
+      <img alt="Hobby Tier Ready" src="https://img.shields.io/badge/Vercel%20Hobby-11%20Functions%20(Under%2012)-success?style=flat-square&logo=vercel" />
+    </a>
+  </p>
+
+  <p>
+    <a href="#-interactive-studio-v21">Interactive Studio</a> ·
+    <a href="#-svg-cards-catalog">Card Catalog</a> ·
+    <a href="#-themes--custom-palettes">Themes & Customization</a> ·
+    <a href="#-1-click-self-hosting-on-vercel">Self-Hosting</a> ·
+    <a href="#-local-development">Development</a>
+  </p>
 </div>
 
+---
+
+## ⚡ What is readme-stats?
+
+**readme-stats** is a free, high-performance, open-source serverless telemetry suite designed to dynamically generate real-time vector SVG cards for your GitHub profile README, portfolio websites, and developer dashboards.
+
+With **Studio v2.1**, it brings an interactive, mobile-responsive web studio to your browser: scan your GitHub profile, pick from 10 role blueprints (DevOps, SRE, MLOps, Full-Stack, etc.), configure 80+ tech stack emblems across 4 icon providers, choose from 76+ themes or craft a custom palette with live color pickers, and export ready-to-paste GitHub Markdown with a single click.
+
+### Key Highlights
+- **100% Free & Independent**: Zero third-party watermarks, zero vendor lock-in.
+- **Interactive Web Studio**: Live GitHub profile scanner, role fit score, blueprint generator, and instant markdown preview.
+- **10 Serverless Card Types**: Stats, streaks, top languages, pinned repositories, gists, trophies, quotes, visitor counter, and tech stack badges.
+- **76+ Themes & Live Theme Studio**: Built-in themes plus a **Plug & Play Custom Palette Builder** with live preview and 1-click reset.
+- **Vercel Hobby Tier Compatible**: Architected with consolidated studio dispatchers to stay under the Vercel Hobby 12-function limit (currently 11 functions).
+- **Rock-Solid Test Coverage**: 27 test suites and 242 tests running on Node.js ES Modules with strict coverage gates.
+
+---
+
+## 🚀 Interactive Studio (v2.1)
+
+You can generate your entire profile README visually without writing markdown by hand!
+
+👉 **[Launch readme-stats Studio Live](https://readme-stats-olive-nu.vercel.app)**
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ readme-stats STUDIO v2.1          [🌙]  [Fork]  [Copy .md] [Download] │
+├────────────────────────────────────────────────────────────────────────┤
+│ github.com/ [ username ]      [ 10 repos ]      [ ✨ Auto-Fetch ]      │
+├───────────────────────────────────┬────────────────────────────────────┤
+│ 1. Blueprint (10 Role Tracks)     │ 👁️ Live GitHub Markdown Preview   │
+│ 2. Profile & Socials              │    - Terminal whoami YAML block    │
+│ 3. Tech Stack (80+ Icons)         │    - Cloud & IaC Badges Card       │
+│ 4. Themes (76+ & Custom Creator)  │    - Stats + Streak + Languages    │
+│ 5. Telemetry Cards & Add-ons      │    - Featured Repositories         │
+└───────────────────────────────────┴────────────────────────────────────┘
+```
+
+1. **Auto-Scan Profile**: Type your GitHub username and click **Auto-Fetch**. It automatically pulls your public repos, languages, bio, company, and calculates your Role Fit Score.
+2. **Select Domain Blueprint**: Pick from curated engineering tracks:
+   - ☁️ *DevOps & Cloud Architect*
+   - 🛡️ *SRE & Platform Engineer*
+   - 🔐 *DevSecOps & Cyber Security*
+   - 📊 *Data Engineer & Lakehouse*
+   - 🤖 *AIOps / MLOps & AI Systems*
+   - 💻 *Software Developer / Full-Stack*
+   - 🏛️ *Principal / Staff Engineer*
+   - 💼 *CTO / Founder*
+   - 🌐 *OSS Maintainer & Contributor*
+   - 🧘 *Minimalist Zen*
+3. **Customize Stack**: Choose from 4 icon providers (*Skillicons, Devicon, Custom SVG Engine, SimpleIcons*).
+4. **Export**: Click **Copy .md** or **Download .md** to save your `README.md`.
+
+---
+
+## 📊 SVG Cards Catalog
+
+All cards are rendered dynamically as crisp SVGs that look razor-sharp on Retina displays and automatically adapt to dark/light GitHub themes.
+
+### 1. GitHub Stats Card (`/api`)
+
+Displays total stars, total commits, pull requests, issues, contribution counts, and an algorithmic rank badge.
+
+```md
+[![Anurag's GitHub stats](https://readme-stats-olive-nu.vercel.app/api?username=anuraghazra&show_icons=true&theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
+```
+
 <p align="center">
-  <a href="https://github.com/iemafzalhassan/readme-stats/actions">
-    <img alt="Tests Passing" src="https://github.com/iemafzalhassan/readme-stats/workflows/Test/badge.svg" />
-  </a>
-  <a href="https://github.com/iemafzalhassan/readme-stats/graphs/contributors">
-    <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/iemafzalhassan/readme-stats" />
-  </a>
-  <a href="https://codecov.io/gh/iemafzalhassan/readme-stats">
-    <img alt="Tests Coverage" src="https://codecov.io/gh/iemafzalhassan/readme-stats/branch/master/graph/badge.svg" />
-  </a>
-  <a href="https://github.com/iemafzalhassan/readme-stats/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/iemafzalhassan/readme-stats?color=0088ff" />
-  </a>
-  <a href="https://github.com/iemafzalhassan/readme-stats/pulls">
-    <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/iemafzalhassan/readme-stats?color=0088ff" />
-  </a>
-  <a href="https://securityscorecards.dev/viewer/?uri=github.com/iemafzalhassan/readme-stats">
-    <img alt="OpenSSF Scorecard" src="https://api.securityscorecards.dev/projects/github.com/iemafzalhassan/readme-stats/badge" />
-  </a>
-  <br />
-  <br />
-  <a href="https://vercel.com?utm\_source=github\_readme\_stats\_team\&utm\_campaign=oss">
-    <img src="./powered-by-vercel.svg"/>
-  </a>
+  <img src="https://readme-stats-olive-nu.vercel.app/api?username=anuraghazra&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
 </p>
 
+#### Common Query Parameters
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `username` | `string` | *(required)* | Your GitHub handle (e.g. `torvalds`) |
+| `theme` | `string` | `default` | Any of the 76+ themes (e.g. `tokyonight`, `dracula`, `catppuccin_mocha`) |
+| `show_icons` | `boolean` | `false` | Displays visual icons next to each metric |
+| `hide_border` | `boolean` | `false` | Removes the outer card border |
+| `hide_rank` | `boolean` | `false` | Hides the global rank badge circle |
+| `include_all_commits`| `boolean` | `false` | Counts all historical commits instead of just the past year |
+| `commits_year` | `number` | `current` | Filter commits count to a specific year (e.g. `2024`) |
+| `hide` | `string` | `""` | Comma-separated list to hide: `stars,commits,prs,issues,contribs` |
+| `show` | `string` | `""` | Comma-separated extra metrics: `reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage` |
+| `card_width` | `number` | auto | Custom width for the card in pixels |
+| `border_radius` | `number` | `4.5` | Corner rounding radius |
+| `locale` | `string` | `en` | Translation locale (supports 30+ languages: `es`, `fr`, `de`, `ja`, etc.) |
+
+---
+
+### 2. GitHub Streak Card (`/api/streak`)
+
+Visualizes your total contributions, current daily contribution streak, and all-time longest streak.
+
+```md
+[![GitHub Streak](https://readme-stats-olive-nu.vercel.app/api/streak?username=anuraghazra&theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
+```
+
 <p align="center">
-  <a href="#all-demos">View Demo</a>
-  ·
-  <a href="https://github.com/iemafzalhassan/readme-stats/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml">Report Bug</a>
-  ·
-  <a href="https://github.com/iemafzalhassan/readme-stats/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml">Request Feature</a>
-  ·
-  <a href="https://github.com/iemafzalhassan/readme-stats/discussions/1770">FAQ</a>
-  ·
-  <a href="https://github.com/iemafzalhassan/readme-stats/discussions/new?category=q-a">Ask Question</a>
+  <img src="https://readme-stats-olive-nu.vercel.app/api/streak?username=anuraghazra&theme=tokyonight" alt="GitHub Streak" />
 </p>
 
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `username` | `string` | *(required)* | GitHub handle |
+| `theme` | `string` | `default` | Color theme |
+| `hide_border` | `boolean` | `false` | Toggle border visibility |
+| `hide_title` | `boolean` | `false` | Toggle card title |
 
-<p align="center">Love the project? Please consider <a href="https://www.paypal.me/iemafzalhassan">donating</a> to help it improve!</p>
+---
 
-<details>
-<summary>Table of contents (Click to show)</summary>
+### 3. Top Languages Card (`/api/top-langs`)
 
-- [GitHub Stats Card](#github-stats-card)
-    - [Hiding individual stats](#hiding-individual-stats)
-    - [Showing additional individual stats](#showing-additional-individual-stats)
-    - [Showing icons](#showing-icons)
-    - [Showing commits count for specified year](#showing-commits-count-for-specified-year)
-    - [Themes](#themes)
-    - [Customization](#customization)
-- [GitHub Extra Pins](#github-extra-pins)
-    - [Usage](#usage)
-    - [Options](#options)
-    - [Demo](#demo)
-- [GitHub Gist Pins](#github-gist-pins)
-    - [Usage](#usage-1)
-    - [Options](#options-1)
-    - [Demo](#demo-1)
-- [Top Languages Card](#top-languages-card)
-    - [Usage](#usage-2)
-    - [Options](#options-2)
-    - [Language stats algorithm](#language-stats-algorithm)
-    - [Exclude individual repositories](#exclude-individual-repositories)
-    - [Hide individual languages](#hide-individual-languages)
-    - [Show more languages](#show-more-languages)
-    - [Compact Language Card Layout](#compact-language-card-layout)
-    - [Donut Chart Language Card Layout](#donut-chart-language-card-layout)
-    - [Donut Vertical Chart Language Card Layout](#donut-vertical-chart-language-card-layout)
-    - [Pie Chart Language Card Layout](#pie-chart-language-card-layout)
-    - [Hide Progress Bars](#hide-progress-bars)
-    - [Change format of language's stats](#change-format-of-languages-stats)
-    - [Demo](#demo-2)
-- [WakaTime Stats Card](#wakatime-stats-card)
-    - [Options](#options-3)
-    - [Demo](#demo-3)
-- [All Demos](#all-demos)
-  - [Quick Tip (Align The Cards)](#quick-tip-align-the-cards)
-    - [Stats and top languages cards](#stats-and-top-languages-cards)
-    - [Pinning repositories](#pinning-repositories)
-- [Deploy on your own](#deploy-on-your-own)
-  - [First step: get your Personal Access Token (PAT)](#first-step-get-your-personal-access-token-pat)
-    - [Classic token](#classic-token)
-    - [Fine-grained token](#fine-grained-token)
-  - [On Vercel](#on-vercel)
-    - [:film\_projector: Check Out Step By Step Video Tutorial By @codeSTACKr](#film_projector-check-out-step-by-step-video-tutorial-by-codestackr)
-  - [On other platforms](#on-other-platforms)
-  - [Available environment variables](#available-environment-variables)
-  - [Keep your fork up to date](#keep-your-fork-up-to-date)
-- [:sparkling\_heart: Support the project](#sparkling_heart-support-the-project)
-</details>
-
-# Important Notices <!-- omit in toc -->
-
-> [!IMPORTANT]
-> Since the GitHub API only [allows 5k requests per hour per user account](https://docs.github.com/en/graphql/overview/resource-limitations), the public Vercel instance hosted on `https://readme-stats.vercel.app/api` could possibly hit the rate limiter (see [#1471](https://github.com/iemafzalhassan/readme-stats/issues/1471)). We use caching to prevent this from happening (see https://github.com/iemafzalhassan/readme-stats#common-options). You can turn off these rate limit protections by [deploying your own Vercel instance](#deploy-on-your-own).
-
-<img alt="Uptime Badge" src="https://img.shields.io/endpoint?url=https%3A%2F%2Freadme-stats-git-monitoring-readme-stats-team.vercel.app%2Fapi%2Fstatus%2Fup%3Ftype%3Dshields">
-
-> [!IMPORTANT]
-> We're a small team, and to prioritize, we rely on upvotes :+1:. We use the Top Issues dashboard for tracking community demand (see [#1935](https://github.com/iemafzalhassan/readme-stats/issues/1935)). Do not hesitate to upvote the issues and pull requests you are interested in. We will work on the most upvoted first.
-
-# GitHub Stats Card
-
-Copy and paste this into your markdown, and that's it. Simple!
-
-Change the `?username=` value to your GitHub username.
+Calculates programming language distribution across your public repositories with support for compact, normal, donut, and pie charts.
 
 ```md
-[![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan)](https://github.com/iemafzalhassan/readme-stats)
+[![Top Langs](https://readme-stats-olive-nu.vercel.app/api/top-langs?username=anuraghazra&layout=compact&theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
 ```
 
-> [!WARNING]
-> By default, the stats card only shows statistics like stars, commits, and pull requests from public repositories. To show private statistics on the stats card, you should [deploy your own instance](#deploy-on-your-own) using your own GitHub API token.
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/top-langs?username=anuraghazra&layout=compact&theme=tokyonight" alt="Top Languages Compact" />
+</p>
 
-> [!NOTE]
-> Available ranks are S (top 1%), A+ (12.5%), A (25%), A- (37.5%), B+ (50%), B (62.5%), B- (75%), C+ (87.5%) and C (everyone). This ranking scheme is based on the [Japanese academic grading](https://wikipedia.org/wiki/Academic_grading_in_Japan) system. The global percentile is calculated as a weighted sum of percentiles for each statistic (number of commits, pull requests, reviews, issues, stars, and followers), based on the cumulative distribution function of the [exponential](https://wikipedia.org/wiki/exponential_distribution) and the [log-normal](https://wikipedia.org/wiki/Log-normal_distribution) distributions. The implementation can be investigated at [src/calculateRank.js](https://github.com/iemafzalhassan/readme-stats/blob/master/src/calculateRank.js). The circle around the rank shows 100 minus the global percentile.
-
-### Hiding individual stats
-
-You can pass a query parameter `&hide=` to hide any specific stats with comma-separated values.
-
-> Options: `&hide=stars,commits,prs,issues,contribs`
+#### Layout Options
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&hide=contribs,prs)
+<!-- Donut Chart -->
+https://readme-stats-olive-nu.vercel.app/api/top-langs?username=anuraghazra&layout=donut&theme=tokyonight
+
+<!-- Pie Chart -->
+https://readme-stats-olive-nu.vercel.app/api/top-langs?username=anuraghazra&layout=pie&theme=tokyonight
 ```
 
-### Showing additional individual stats
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `layout` | `string` | `normal` | Options: `normal`, `compact`, `donut`, `donut-vertical`, `pie` |
+| `langs_count` | `number` | `5` | Maximum number of languages to display (1–20) |
+| `exclude_repo` | `string` | `""` | Comma-separated repositories to exclude from calculations |
+| `hide` | `string` | `""` | Comma-separated languages to hide (e.g. `html,css`) |
+| `hide_progress` | `boolean` | `false` | Hides percentage progress bars |
 
-You can pass a query parameter `&show=` to show any specific additional stats with comma-separated values.
+---
 
-> Options: `&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage`
+### 4. Pinned Repository Card (`/api/pin`)
+
+Pin any public repository to your README in a sleek card showing stars, forks, language, and repository description.
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+[![Pinned Repo](https://readme-stats-olive-nu.vercel.app/api/pin?username=anuraghazra&repo=github-readme-stats&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 ```
 
-### Showing icons
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/pin?username=anuraghazra&repo=github-readme-stats&theme=tokyonight" alt="Pinned Repo" />
+</p>
 
-To enable icons, you can pass `&show_icons=true` in the query param, like so:
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `username` | `string` | *(required)* | Owner of the repository |
+| `repo` | `string` | *(required)* | Repository name |
+| `show_owner` | `boolean` | `false` | Displays the owner's handle in the title |
+
+---
+
+### 5. GitHub Achievements & Trophies (`/api/trophies`)
+
+Generates achievement tier badges (SSS, SS, S, AAA, AA, A) based on repositories, stars, forks, and followers.
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true)
+[![Trophies](https://readme-stats-olive-nu.vercel.app/api/trophies?username=anuraghazra&theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
 ```
 
-### Showing commits count for specified year
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/trophies?username=anuraghazra&theme=tokyonight" alt="Trophies" />
+</p>
 
-You can specify a year and fetch only the commits that were made in that year by passing `&commits_year=YYYY` to the parameter.
+---
+
+### 6. Geometric Tech Stack Badges (`/api/badges`)
+
+Renders your architecture and toolchain inside geometric vector frames (hexagon, squircle, circle, pill, or glassmorphic).
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&commits_year=2020)
+<img src="https://readme-stats-olive-nu.vercel.app/api/badges?icons=docker,kubernetes,terraform,aws,go,linux&shape=hexagon&theme=tokyonight" alt="Tech Stack" />
 ```
 
-### Themes
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/badges?icons=docker,kubernetes,terraform,aws,go,linux&shape=hexagon&theme=tokyonight" alt="Tech Stack Badges" />
+</p>
 
-With inbuilt themes, you can customize the look of the card without doing any [manual customization](#customization).
+| Shape | Description |
+| :--- | :--- |
+| `hexagon` | Cybernetic hexagonal matrix with theme stroke accents *(default)* |
+| `squircle` | Tinted iOS-style squircle badges |
+| `circle` | Clean orbital circular icons |
+| `pill` | Neon cyber pill badges |
+| `glass` | Glassmorphic semi-transparent tiles |
 
-Use `&theme=THEME_NAME` parameter like so :
+---
+
+### 7. Developer Quotes Card (`/api/quotes`)
+
+Displays curated engineering quotes from pioneers like Linus Torvalds, Grace Hopper, Martin Fowler, and Ken Thompson.
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=radical)
+[![Quote](https://readme-stats-olive-nu.vercel.app/api/quotes?theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
 ```
 
-#### All inbuilt themes
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/quotes?theme=tokyonight" alt="Developer Quote" />
+</p>
 
-GitHub Readme Stats comes with several built-in themes (e.g. `dark`, `radical`, `merko`, `gruvbox`, `tokyonight`, `onedark`, `cobalt`, `synthwave`, `highcontrast`, `dracula`).
+---
 
-<img src="https://res.cloudinary.com/iemafzalhassan/image/upload/v1595174536/grs-themes_l4ynja.png" alt="GitHub Readme Stats Themes" width="600px"/>
+### 8. Profile Views & Visitor Counter (`/api/visitor`)
 
-You can look at a preview for [all available themes](themes/README.md) or checkout the [theme config file](themes/index.js). Please note that we paused the addition of new themes to decrease maintenance efforts; all pull requests related to new themes will be closed.
-
-#### Responsive Card Theme
-
-[![Afzal GitHub stats-Dark](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/iemafzalhassan/readme-stats#responsive-card-theme#gh-dark-mode-only)
-[![Afzal GitHub stats-Light](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/iemafzalhassan/readme-stats#responsive-card-theme#gh-light-mode-only)
-
-Since GitHub will re-upload the cards and serve them from their [CDN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls), we can not infer the browser/GitHub theme on the server side. There are, however, four methods you can use to create dynamics themes on the client side.
-
-##### Use the transparent theme
-
-We have included a `transparent` theme that has a transparent background. This theme is optimized to look good on GitHub's dark and light default themes. You can enable this theme using the `&theme=transparent` parameter like so:
+Track real-time profile visits with a customizable SVG badge.
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=transparent)
+<img src="https://readme-stats-olive-nu.vercel.app/api/visitor?username=anuraghazra&label=PROFILE%20VIEWS&style=flat-square&theme=tokyonight" alt="Visitors" />
 ```
 
-<details>
-<summary>:eyes: Show example</summary>
+<p align="center">
+  <img src="https://readme-stats-olive-nu.vercel.app/api/visitor?username=anuraghazra&label=PROFILE%20VIEWS&style=flat-square&theme=tokyonight" alt="Profile Views" />
+</p>
 
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=transparent)
+---
 
-</details>
+### 9. WakaTime Coding Stats (`/api/wakatime`)
 
-##### Add transparent alpha channel to a themes bg\_color
-
-You can use the `bg_color` parameter to make any of [the available themes](themes/README.md) transparent. This is done by setting the `bg_color` to a color with a transparent alpha channel (i.e. `bg_color=00000000`):
+Displays your weekly programming time tracked via WakaTime.
 
 ```md
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&bg_color=00000000)
+[![Wakatime](https://readme-stats-olive-nu.vercel.app/api/wakatime?username=anuraghazra&theme=tokyonight)](https://github.com/iemafzalhassan/readme-stats)
 ```
 
-<details>
-<summary>:eyes: Show example</summary>
+---
 
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&bg_color=00000000)
+## 🎨 Themes & Custom Palettes
 
-</details>
+### Built-in Themes (76+ Available)
+Apply any theme by adding `&theme=NAME`. Popular palettes include:
 
-##### Use GitHub's theme context tag
+| Theme Name | Preview Palette |
+| :--- | :--- |
+| `tokyonight` | Deep Navy `#1a1b27`, Cyber Blue `#70a5fd`, Teal `#38bdae`, Purple `#bf91f3` |
+| `dracula` | Dark Purple `#282a36`, Pink `#ff6e96`, Cyan `#79dafa` |
+| `catppuccin_mocha` | Mocha `#1e1e2e`, Mauve `#cba6f7`, Teal `#94e2d5` |
+| `radical` | Deep Violet `#141321`, Hot Pink `#fe428e`, Gold `#f8d847` |
+| `gruvbox` | Dark Brown `#282828`, Yellow `#fabd2f`, Aqua `#8ec07c` |
+| `github_dark` | GitHub Canvas `#0d1117`, Blue `#58a6ff`, Muted Gray `#c3d1d9` |
+| `onedark` | Atom Dark `#282c34`, Amber `#e4bf7a`, Red `#df6d74` |
+| `nord` | Arctic Blue `#2e3440`, Frost `#88c0d0`, Snow `#e5e9f0` |
+| `transparent` | Transparent background, optimized for dark & light GitHub profiles |
 
-You can use [GitHub's theme context](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/) tags to switch the theme based on the user GitHub theme automatically. This is done by appending `#gh-dark-mode-only` or `#gh-light-mode-only` to the end of an image URL. This tag will define whether the image specified in the markdown is only shown to viewers using a light or a dark GitHub theme:
+👉 *Browse all available themes in [`themes/index.js`](./themes/index.js) or via the [Studio Theme Tab](https://readme-stats-olive-nu.vercel.app).*
+
+---
+
+### Plug & Play Custom Themes (Zero-Code Customization)
+
+You can pass custom hex colors directly in the card URL to create your own unique palette without modifying any code:
 
 ```md
-[![Afzal GitHub stats-Dark](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/iemafzalhassan/readme-stats#gh-dark-mode-only)
-[![Afzal GitHub stats-Light](https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/iemafzalhassan/readme-stats#gh-light-mode-only)
+https://readme-stats-olive-nu.vercel.app/api?username=torvalds&title_color=6366f1&text_color=e2e8f0&icon_color=38bdf8&bg_color=09090b&border_color=27272a
 ```
 
-<details>
-<summary>:eyes: Show example</summary>
+| Query Parameter | Description | Example |
+| :--- | :--- | :--- |
+| `&title_color=` | Header and title text color | `6366f1` |
+| `&text_color=` | Body and stats metric color | `e2e8f0` |
+| `&icon_color=` | Icon and indicator color | `38bdf8` |
+| `&bg_color=` | Background color (or gradient: `45,09090b,18181b`) | `09090b` |
+| `&border_color=` | Outer card border outline color | `27272a` |
 
-[![Afzal GitHub stats-Dark](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/iemafzalhassan/readme-stats#gh-dark-mode-only)
-[![Afzal GitHub stats-Light](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/iemafzalhassan/readme-stats#gh-light-mode-only)
+> 💡 **Studio Custom Theme Creator**: Open the [Live Studio](https://readme-stats-olive-nu.vercel.app), navigate to the **Themes** tab, use the 5 visual color pickers, and click **Apply Custom Palette** to preview your custom theme live! Click **Copy Theme JSON** to export your palette.
 
-</details>
+---
 
-##### Use GitHub's new media feature
+### Responsive GitHub Dark/Light Mode Switching
 
-You can use [GitHub's new media feature](https://github.blog/changelog/2022-05-19-specify-theme-context-for-images-in-markdown-beta/) in HTML to specify whether to display images for light or dark themes. This is done using the HTML `<picture>` element in combination with the `prefers-color-scheme` media feature.
+To make your cards automatically toggle based on the viewer's GitHub appearance setting:
 
-```html
+```md
 <picture>
-  <source
-    srcset="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=dark"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-stats-olive-nu.vercel.app/api?username=anuraghazra&show_icons=true&theme=tokyonight" />
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-stats-olive-nu.vercel.app/api?username=anuraghazra&show_icons=true&theme=default" />
+  <img src="https://readme-stats-olive-nu.vercel.app/api?username=anuraghazra&show_icons=true" alt="GitHub Stats" />
 </picture>
 ```
 
-<details>
-<summary>:eyes: Show example</summary>
+---
 
-<picture>
-  <source
-    srcset="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true&theme=dark"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://readme-stats.vercel.app/api?username=iemafzalhassan&show_icons=true" />
-</picture>
+## 🚀 1-Click Self-Hosting on Vercel
 
-</details>
+If you want to track private repository contributions or run an unmetered personal instance with your own GitHub Personal Access Token (PAT):
 
-### Customization
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fiemafzalhassan%2Freadme-stats&env=PAT_1&project-name=readme-stats)
 
-You can customize the appearance of all your cards however you wish with URL parameters.
+### Step-by-Step Instructions
 
-#### Common Options
+1. **Fork this repository** to your GitHub account.
+2. **Generate a GitHub Personal Access Token**:
+   - Go to [GitHub Settings -> Developer Settings -> Personal access tokens (classic)](https://github.com/settings/tokens).
+   - Generate a token with the `repo` scope (for private repositories) or `read:user` (for public-only).
+3. **Deploy on Vercel**:
+   - Go to [Vercel](https://vercel.com/) and click **Add New Project**.
+   - Select your forked `readme-stats` repository.
+   - In **Environment Variables**, add:
+     - `PAT_1`: Your personal access token from step 2.
+4. **Click Deploy** 🎉. Your private instance is now ready!
 
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `title_color` | Card's title color. | string (hex color) | `2f80ed` |
-| `text_color` | Body text color. | string (hex color) | `434d58` |
-| `icon_color` | Icons color if available. | string (hex color) | `4c71f2` |
-| `border_color` | Card's border color. Does not apply when `hide_border` is enabled. | string (hex color) | `e4e2e2` |
-| `bg_color` | Card's background color. | string (hex color or a gradient in the form of *angle,start,end*) | `fffefe` |
-| `hide_border` | Hides the card's border. | boolean | `false` |
-| `theme` | Name of the theme, choose from [all available themes](themes/README.md). | enum | `default` |
-| `cache_seconds` | Sets the cache header manually (min: 21600, max: 86400). | integer | `21600` |
-| `locale` | Sets the language in the card, you can check full list of available locales [here](#available-locales). | enum | `en` |
-| `border_radius` | Corner rounding on the card. | number | `4.5` |
-
-> [!WARNING]
-> We use caching to decrease the load on our servers (see <https://github.com/iemafzalhassan/readme-stats/issues/1471#issuecomment-1271551425>). Our cards have the following default cache hours: stats card - 24 hours, top languages card - 144 hours (6 days), pin card - 240 hours (10 days), gist card - 48 hours (2 days), and wakatime card - 24 hours. If you want the data on your cards to be updated more often you can [deploy your own instance](#deploy-on-your-own) and set [environment variable](#available-environment-variables) `CACHE_SECONDS` to a value of your choosing.
-
-##### Gradient in bg\_color
-
-You can provide multiple comma-separated values in the bg\_color option to render a gradient with the following format:
-
-    &bg_color=DEG,COLOR1,COLOR2,COLOR3...COLOR10
-
-##### Available locales
-
-Here is a list of all available locales:
-
-<table>
-<tr><td>
-
-| Code | Locale |
-| --- | --- |
-| `ar` | Arabic |
-| `az` | Azerbaijani |
-| `bn` | Bengali |
-| `bg` | Bulgarian |
-| `my` | Burmese |
-| `ca` | Catalan |
-| `cn` | Chinese |
-| `zh-tw` | Chinese (Taiwan) |
-| `cs` | Czech |
-| `nl` | Dutch |
-| `en` | English |
-| `fil` | Filipino |
-| `fi` | Finnish |
-| `fr` | French |
-| `de` | German |
-| `el` | Greek |
-
-</td><td>
-
-| Code | Locale |
-| --- | --- |
-| `he` | Hebrew |
-| `hi` | Hindi |
-| `hu` | Hungarian |
-| `id` | Indonesian |
-| `it` | Italian |
-| `ja` | Japanese |
-| `kr` | Korean |
-| `ml` | Malayalam |
-| `np` | Nepali |
-| `no` | Norwegian |
-| `fa` | Persian (Farsi) |
-| `pl` | Polish |
-| `pt-br` | Portuguese (Brazil) |
-| `pt-pt` | Portuguese (Portugal) |
-| `ro` | Romanian |
-
-</td><td>
-
-| Code | Locale |
-| --- | --- |
-| `ru` | Russian |
-| `sa` | Sanskrit |
-| `sr` | Serbian (Cyrillic) |
-| `sr-latn` | Serbian (Latin) |
-| `sk` | Slovak |
-| `es` | Spanish |
-| `sw` | Swahili |
-| `se` | Swedish |
-| `ta` | Tamil |
-| `th` | Thai |
-| `tr` | Turkish |
-| `uk-ua` | Ukrainian |
-| `ur` | Urdu |
-| `uz` | Uzbek |
-| `vi` | Vietnamese |
-
-</td></tr>
-</table>
-
-If we don't support your language, please consider contributing! You can find more information about how to do it in our [contributing guidelines](CONTRIBUTING.md#translations-contribution).
-
-#### Stats Card Exclusive Options
-
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `hide` | Hides the [specified items](#hiding-individual-stats) from stats. | string (comma-separated values) | `null` |
-| `hide_title` | Hides the title of your stats card. | boolean | `false` |
-| `card_width` | Sets the card's width manually. | number | `500px  (approx.)` |
-| `hide_rank` | Hides the rank and automatically resizes the card width. | boolean | `false` |
-| `rank_icon` | Shows alternative rank icon (i.e. `github`, `percentile` or `default`). | enum | `default` |
-| `show_icons` | Shows icons near all stats. | boolean | `false` |
-| `include_all_commits` | Count total commits instead of just the current year commits. | boolean | `false` |
-| `line_height` | Sets the line height between text. | integer | `25` |
-| `exclude_repo` | Excludes specified repositories. | string (comma-separated values) | `null` |
-| `custom_title` | Sets a custom title for the card. | string | `<username> GitHub Stats` |
-| `text_bold` | Uses bold text. | boolean | `true` |
-| `disable_animations` | Disables all animations in the card. | boolean | `false` |
-| `ring_color` | Color of the rank circle. | string (hex color) | `2f80ed` |
-| `number_format` | Switches between two available formats for displaying the card values `short` (i.e. `6.6k`) and `long` (i.e. `6626`). | enum | `short` |
-| `number_precision` | Enforce the number of digits after the decimal point for `short` number format. Must be an integer between 0 and 2. Will be ignored for `long` number format. | integer (0, 1 or 2) | `null` |
-| `show` | Shows [additional items](#showing-additional-individual-stats) on stats card (i.e. `reviews`, `discussions_started`, `discussions_answered`, `prs_merged` or `prs_merged_percentage`). | string (comma-separated values) | `null` |
-| `commits_year` | Filters and counts only commits made in the specified year. | integer _(YYYY)_ | `<current year> (one year to date)` |
-
-> [!WARNING]
-> Custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `Afzal GitHub Stats` should become `Anurag%27s%20GitHub%20Stats`). You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
-
+### Serverless Function Limit (Vercel Hobby Tier)
 > [!NOTE]
-> When hide\_rank=`true`, the minimum card width is 270 px + the title length and padding.
+> Vercel Hobby accounts have a limit of **12 serverless functions per project**.
+> This codebase consolidates secondary endpoints (`/api/badges`, `/api/trophies`, `/api/quotes`, etc.) into a unified dispatcher (`api/studio.js`), keeping the total function count at **11 functions**. It deploys to Vercel Hobby accounts cleanly out of the box!
 
-***
+### Supported Environment Variables
 
-# GitHub Extra Pins
+| Variable | Description | Default |
+| :--- | :--- | :--- |
+| `PAT_1`, `PAT_2`, ... | GitHub Personal Access Tokens (used with round-robin load balancing) | *Required for private stats* |
+| `CACHE_SECONDS` | Default cache TTL in seconds for all generated cards | `86400` (24h) |
+| `WHITELIST` | Comma-separated usernames allowed to query your instance | *All allowed* |
+| `EXCLUDE_REPO` | Repositories to exclude from stats across all cards | `""` |
+| `FETCH_MULTI_PAGE_STARS` | Enables multi-page fetching for users with >100 starred repositories | `false` |
 
-GitHub extra pins allow you to pin more than 6 repositories in your profile using a GitHub readme profile.
+---
 
-Yay! You are no longer limited to 6 pinned repositories.
+## 🛠️ Local Development
 
-### Usage
+Clone the repository and install dependencies:
 
-Copy-paste this code into your readme and change the links.
+```bash
+# Clone the repository
+git clone https://github.com/iemafzalhassan/readme-stats.git
+cd readme-stats
 
-Endpoint: `api/pin?username=iemafzalhassan&repo=readme-stats`
+# Install dependencies
+npm install
 
-```md
-[![Readme Card](https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan&repo=readme-stats)](https://github.com/iemafzalhassan/readme-stats)
+# Start local server on port 9000
+npm run dev
 ```
 
-### Options
+Visit `http://localhost:9000` to open the Studio, or test endpoints directly at `http://localhost:9000/api?username=anuraghazra`.
 
-You can customize the appearance and behavior of the pinned repository card using the [common options](#common-options) and exclusive options listed in the table below.
+### Running Tests & Linting
 
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `show_owner` | Shows the repo's owner name. | boolean | `false` |
-| `description_lines_count` | Manually set the number of lines for the description. Specified value will be clamped between 1 and 3. If this parameter is not specified, the number of lines will be automatically adjusted according to the actual length of the description. | number | `null` |
+```bash
+# Run full Jest test suite (27 suites, 242 tests)
+npm test
 
-### Demo
+# Run tests in watch mode
+npm run test:watch
 
-![Readme Card](https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan\&repo=readme-stats)
+# Update snapshots
+npm run test:update:snapshot
 
-Use `show_owner` query option to include the repo's owner username
-
-![Readme Card](https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan\&repo=readme-stats\&show_owner=true)
-
-# GitHub Gist Pins
-
-GitHub gist pins allow you to pin gists in your GitHub profile using a GitHub readme profile.
-
-### Usage
-
-Copy-paste this code into your readme and change the links.
-
-Endpoint: `api/gist?id=bbfce31e0217a3689c8d961a356cb10d`
-
-```md
-[![Gist Card](https://readme-stats.vercel.app/api/gist?id=bbfce31e0217a3689c8d961a356cb10d)](https://gist.github.com/Yizack/bbfce31e0217a3689c8d961a356cb10d/)
+# Check code formatting & linting
+npm run lint
+npm run format:check
 ```
 
-### Options
+---
 
-You can customize the appearance and behavior of the gist card using the [common options](#common-options) and exclusive options listed in the table below.
+## 🤝 Contributing
 
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `show_owner` | Shows the gist's owner name. | boolean | `false` |
+Contributions are warmly welcomed!
 
-### Demo
+- **Found a bug?** Open an [Issue](https://github.com/iemafzalhassan/readme-stats/issues).
+- **Want to add a theme?** Submit a PR updating [`themes/index.js`](./themes/index.js) and preview it in the studio.
+- **Want to improve the studio?** Check out [`frontend/`](./frontend/).
 
-![Gist Card](https://readme-stats.vercel.app/api/gist?id=bbfce31e0217a3689c8d961a356cb10d)
+---
 
-Use `show_owner` query option to include the gist's owner username
+## 📄 License
 
-![Gist Card](https://readme-stats.vercel.app/api/gist?id=bbfce31e0217a3689c8d961a356cb10d\&show_owner=true)
+This project is open-source software licensed under the **[MIT License](./LICENSE)**. Free to fork, host, modify, and distribute.
 
-# Top Languages Card
-
-The top languages card shows a GitHub user's most frequently used languages.
-
-> [!WARNING]
-> By default, the language card shows language results only from public repositories. To include languages used in private repositories, you should [deploy your own instance](#deploy-on-your-own) using your own GitHub API token.
-
-> [!NOTE]
-> Top Languages does not indicate the user's skill level or anything like that; it's a GitHub metric to determine which languages have the most code on GitHub. It is a new feature of readme-stats.
-
-> [!WARNING]
-> This card shows language usage only inside your own non-forked repositories, not depending on who the author of the commits is. It does not include your contributions into another users/organizations repositories. Currently there are no way to get this data from GitHub API. If you want this behavior to be improved you can support [this feature request](https://github.com/orgs/community/discussions/18230) created by [@rickstaa](https://github.com/rickstaa) inside GitHub Community.
-
-> [!WARNING]
-> Currently this card shows data only about first 100 repositories. This is because GitHub API limitations which cause downtimes of public instances (see [#1471](https://github.com/iemafzalhassan/readme-stats/issues/1471)). In future this behavior will be improved by releasing GitHub action or providing environment variables for user's own instances.
-
-### Usage
-
-Copy-paste this code into your readme and change the links.
-
-Endpoint: `api/top-langs?username=iemafzalhassan`
-
-```md
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan)](https://github.com/iemafzalhassan/readme-stats)
-```
-
-### Options
-
-You can customize the appearance and behavior of the top languages card using the [common options](#common-options) and exclusive options listed in the table below.
-
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `hide` | Hides the [specified languages](#hide-individual-languages) from card. | string (comma-separated values) | `null` |
-| `hide_title` | Hides the title of your card. | boolean | `false` |
-| `layout` | Switches between five available layouts `normal` & `compact` & `donut` & `donut-vertical` & `pie`. | enum | `normal` |
-| `card_width` | Sets the card's width manually. | number | `300` |
-| `langs_count` | Shows more languages on the card, between 1-20. | integer | `5` for `normal` and `donut`, `6` for other layouts |
-| `exclude_repo` | Excludes specified repositories. | string (comma-separated values) | `null` |
-| `custom_title` | Sets a custom title for the card. | string | `Most Used Languages` |
-| `disable_animations` | Disables all animations in the card. | boolean | `false` |
-| `hide_progress` | Uses the compact layout option, hides percentages, and removes the bars. | boolean | `false` |
-| `size_weight` | Configures language stats algorithm (see [Language stats algorithm](#language-stats-algorithm)). | integer | `1` |
-| `count_weight` | Configures language stats algorithm (see [Language stats algorithm](#language-stats-algorithm)). | integer | `0` |
-| `stats_format` | Switches between two available formats for language's stats `percentages` and `bytes`. | enum | `percentages` |
-
-> [!WARNING]
-> Language names and custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `c++` should become `c%2B%2B`, `jupyter notebook` should become `jupyter%20notebook`, `Most Used Languages` should become `Most%20Used%20Languages`, etc.) You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
-
-### Language stats algorithm
-
-We use the following algorithm to calculate the languages percentages on the language card:
-
-```js
-ranking_index = (byte_count ^ size_weight) * (repo_count ^ count_weight)
-```
-
-By default, only the byte count is used for determining the languages percentages shown on the language card (i.e. `size_weight=1` and `count_weight=0`). You can, however, use the `&size_weight=` and `&count_weight=` options to weight the language usage calculation. The values must be positive real numbers. [More details about the algorithm can be found here](https://github.com/iemafzalhassan/readme-stats/issues/1600#issuecomment-1046056305).
-
-*   `&size_weight=1&count_weight=0` - *(default)* Orders by byte count.
-*   `&size_weight=0.5&count_weight=0.5` - *(recommended)* Uses both byte and repo count for ranking
-*   `&size_weight=0&count_weight=1` - Orders by repo count
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&size_weight=0.5&count_weight=0.5)
-```
-
-### Exclude individual repositories
-
-You can use the `&exclude_repo=repo1,repo2` parameter to exclude individual repositories.
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&exclude_repo=readme-stats,iemafzalhassan.github.io)
-```
-
-### Hide individual languages
-
-You can use `&hide=language1,language2` parameter to hide individual languages.
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&hide=javascript,html)
-```
-
-### Show more languages
-
-You can use the `&langs_count=` option to increase or decrease the number of languages shown on the card. Valid values are integers between 1 and 20 (inclusive). By default it was set to `5` for `normal` & `donut` and `6` for other layouts.
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&langs_count=8)
-```
-
-### Compact Language Card Layout
-
-You can use the `&layout=compact` option to change the card design.
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&layout=compact)
-```
-
-### Donut Chart Language Card Layout
-
-You can use the `&layout=donut` option to change the card design.
-
-```md
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&layout=donut)](https://github.com/iemafzalhassan/readme-stats)
-```
-
-### Donut Vertical Chart Language Card Layout
-
-You can use the `&layout=donut-vertical` option to change the card design.
-
-```md
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&layout=donut-vertical)](https://github.com/iemafzalhassan/readme-stats)
-```
-
-### Pie Chart Language Card Layout
-
-You can use the `&layout=pie` option to change the card design.
-
-```md
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&layout=pie)](https://github.com/iemafzalhassan/readme-stats)
-```
-
-### Hide Progress Bars
-
-You can use the `&hide_progress=true` option to hide the percentages and the progress bars (layout will be automatically set to `compact`).
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&hide_progress=true)
-```
-
-### Change format of language's stats
-
-You can use the `&stats_format=bytes` option to display the stats in bytes instead of percentage.
-
-```md
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan&stats_format=bytes)
-```
-
-
-### Demo
-
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan)
-
-*   Compact layout
-
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&layout=compact)
-
-*   Donut Chart layout
-
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&layout=donut)](https://github.com/iemafzalhassan/readme-stats)
-
-*   Donut Vertical Chart layout
-
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&layout=donut-vertical)](https://github.com/iemafzalhassan/readme-stats)
-
-*   Pie Chart layout
-
-[![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&layout=pie)](https://github.com/iemafzalhassan/readme-stats)
-
-*   Hidden progress bars
-
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&hide_progress=true)
-
-
-*  Display bytes instead of percentage
-
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan\&stats_format=bytes)
-
-# WakaTime Stats Card
-
-> [!WARNING]
-> Please be aware that we currently only show data from WakaTime profiles that are public. You therefore have to make sure that **BOTH** `Display code time publicly` and `Display languages, editors, os, categories publicly` are enabled.
-
-> [!WARNING]
-> In case you just created a new WakaTime account, then it might take up to 24 hours until your stats will become visible on the WakaTime stats card.
-
-Change the `?username=` value to your [WakaTime](https://wakatime.com) username.
-
-```md
-[![Harlok's WakaTime stats](https://readme-stats.vercel.app/api/wakatime?username=ffflabs)](https://github.com/iemafzalhassan/readme-stats)
-```
-
-### Options
-
-You can customize the appearance and behavior of the WakaTime stats card using the [common options](#common-options) and exclusive options listed in the table below.
-
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `hide` | Hides the languages specified from the card. | string (comma-separated values) | `null` |
-| `hide_title` | Hides the title of your card. | boolean | `false` |
-| `card_width` | Sets the card's width manually. | number | `495` |
-| `line_height` | Sets the line height between text. | integer | `25` |
-| `hide_progress` | Hides the progress bar and percentage. | boolean | `false` |
-| `custom_title` | Sets a custom title for the card. | string | `WakaTime Stats` |
-| `layout` | Switches between two available layouts `default` & `compact`. | enum | `default` |
-| `langs_count` | Limits the number of languages on the card, defaults to all reported languages. | integer | `null` |
-| `api_domain` | Sets a custom API domain for the card, e.g. to use services like [Hakatime](https://github.com/mujx/hakatime) or [Wakapi](https://github.com/muety/wakapi) | string | `wakatime.com` |
-| `display_format` | Sets the WakaTime stats display format. Choose `time` to display time-based stats or `percent` to show percentages. | enum | `time` |
-| `disable_animations` | Disables all animations in the card. | boolean | `false` |
-
-> [!WARNING]
-> Custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `WakaTime Stats` should become `WakaTime%20Stats`). You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
-
-### Demo
-
-![Harlok's WakaTime stats](https://readme-stats.vercel.app/api/wakatime?username=ffflabs)
-
-![Harlok's WakaTime stats](https://readme-stats.vercel.app/api/wakatime?username=ffflabs\&hide_progress=true)
-
-*   Compact layout
-
-![Harlok's WakaTime stats](https://readme-stats.vercel.app/api/wakatime?username=ffflabs\&layout=compact)
-
-***
-
-# All Demos
-
-*   Default
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan)
-
-*   Hiding specific stats
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&hide=contribs,issues)
-
-*   Showing additional stats
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
-
-*   Showing icons
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&hide=issues\&show_icons=true)
-
-*   Shows GitHub logo instead rank level
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&rank_icon=github)
-
-*   Shows user rank percentile instead of rank level
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&rank_icon=percentile)
-
-*   Customize Border Color
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&border_color=2e4058)
-
-*   Include All Commits
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&include_all_commits=true)
-
-*   Themes
-
-Choose from any of the [default themes](#themes)
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&show_icons=true\&theme=radical)
-
-*   Gradient
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api?username=iemafzalhassan\&bg_color=30,e96443,904e95\&title_color=fff\&text_color=fff)
-
-*   Customizing stats card
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api/?username=iemafzalhassan\&show_icons=true\&title_color=fff\&icon_color=79ff97\&text_color=9f9f9f\&bg_color=151515)
-
-*   Setting card locale
-
-![Afzal GitHub stats](https://readme-stats.vercel.app/api/?username=iemafzalhassan\&locale=es)
-
-*   Customizing repo card
-
-![Customized Card](https://readme-stats.vercel.app/api/pin?username=iemafzalhassan\&repo=readme-stats\&title_color=fff\&icon_color=f9f9f9\&text_color=9f9f9f\&bg_color=151515)
-
-*   Gist card
-
-![Gist Card](https://readme-stats.vercel.app/api/gist?id=bbfce31e0217a3689c8d961a356cb10d)
-
-*   Customizing gist card
-
-![Gist Card](https://readme-stats.vercel.app/api/gist?id=bbfce31e0217a3689c8d961a356cb10d&theme=calm)
-
-*   Top languages
-
-![Top Langs](https://readme-stats.vercel.app/api/top-langs/?username=iemafzalhassan)
-
-*   WakaTime card
-
-![Harlok's WakaTime stats](https://readme-stats.vercel.app/api/wakatime?username=ffflabs)
-
-***
-
-## Quick Tip (Align The Cards)
-
-By default, GitHub does not lay out the cards side by side. To do that, you can use such approaches:
-
-### Stats and top languages cards
-
-```html
-<a href="https://github.com/iemafzalhassan/readme-stats">
-  <img height=200 align="center" src="https://readme-stats.vercel.app/api?username=iemafzalhassan" />
-</a>
-<a href="https://github.com/iemafzalhassan/convoychat">
-  <img height=200 align="center" src="https://readme-stats.vercel.app/api/top-langs?username=iemafzalhassan&layout=compact&langs_count=8&card_width=320" />
-</a>
-```
-
-<details>
-<summary>:eyes: Show example</summary>
-
-<a href="https://github.com/iemafzalhassan/readme-stats">
-  <img height=200 align="center" src="https://readme-stats.vercel.app/api?username=iemafzalhassan" />
-</a>
-<a href="https://github.com/iemafzalhassan/convoychat">
-  <img height=200 align="center" src="https://readme-stats.vercel.app/api/top-langs?username=iemafzalhassan&layout=compact&langs_count=8&card_width=320" />
-</a>
-
-</details>
-
-### Pinning repositories
-
-```html
-<a href="https://github.com/iemafzalhassan/readme-stats">
-  <img align="center" src="https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan&repo=readme-stats" />
-</a>
-<a href="https://github.com/iemafzalhassan/convoychat">
-  <img align="center" src="https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan&repo=convoychat" />
-</a>
-```
-
-<details>
-<summary>:eyes: Show example</summary>
-
-<a href="https://github.com/iemafzalhassan/readme-stats">
-  <img align="center" src="https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan&repo=readme-stats" />
-</a>
-<a href="https://github.com/iemafzalhassan/convoychat">
-  <img align="center" src="https://readme-stats.vercel.app/api/pin/?username=iemafzalhassan&repo=convoychat" />
-</a>
-
-</details>
-
-# Deploy on your own
-
-## First step: get your Personal Access Token (PAT)
-
-For deploying your own instance of GitHub Readme Stats, you will need to create a GitHub Personal Access Token (PAT). Below are the steps to create one and the scopes you need to select for both classic and fine-grained tokens.
-
-Selecting the right scopes for your token is important in case you want to display private contributions on your cards.
-
-### Classic token
-
-* Go to [Account -> Settings -> Developer Settings -> Personal access tokens -> Tokens (classic)](https://github.com/settings/tokens).
-* Click on `Generate new token -> Generate new token (classic)`.
-* Scopes to select:
-  * repo
-  * read:user
-* Click on `Generate token` and copy it.
-
-### Fine-grained token
-
-> [!WARNING]\
-> This limits the scope to issues in your repositories and includes only public commits.
-
-* Go to [Account -> Settings -> Developer Settings -> Personal access tokens -> Fine-grained tokens](https://github.com/settings/tokens).
-* Click on `Generate new token -> Generate new token`.
-* Select an expiration date
-* Select `All repositories`
-* Scopes to select in `Repository permission`:
-  * Commit statuses: read-only
-  * Contents: read-only
-  * Issues: read-only
-  * Metadata: read-only
-  * Pull requests: read-only
-* Click on `Generate token` and copy it.
-
-## On Vercel
-
-### :film\_projector: [Check Out Step By Step Video Tutorial By @codeSTACKr](https://youtu.be/n6d4KHSKqGk?t=107)
-
-Since the GitHub API only allows 5k requests per hour, my `https://readme-stats.vercel.app/api` could possibly hit the rate limiter. If you host it on your own Vercel server, then you do not have to worry about anything. Click on the deploy button to get started!
-
-> [!NOTE]
-> Since [#58](https://github.com/iemafzalhassan/readme-stats/pull/58), we should be able to handle more than 5k requests and have fewer issues with downtime :grin:.
-
-> [!NOTE]
-> If you are on the [Pro (i.e. paid)](https://vercel.com/pricing) Vercel plan, the [maxDuration](https://vercel.com/docs/concepts/projects/project-configuration#value-definition) value found in the [vercel.json](https://github.com/iemafzalhassan/readme-stats/blob/master/vercel.json) can be increased when your Vercel instance frequently times out during the card request. You are advised to keep this value lower than `30` seconds to prevent high memory usage.
-
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/iemafzalhassan/readme-stats)
-
-<details>
- <summary><b>:hammer_and_wrench: Step-by-step guide on setting up your own Vercel instance</b></summary>
-
-1.  Go to [vercel.com](https://vercel.com/).
-2.  Click on `Log in`.
-    ![](https://files.catbox.moe/pcxk33.png)
-3.  Sign in with GitHub by pressing `Continue with GitHub`.
-    ![](https://files.catbox.moe/b9oxey.png)
-4.  Sign in to GitHub and allow access to all repositories if prompted.
-5.  Fork this repo.
-6.  Go back to your [Vercel dashboard](https://vercel.com/dashboard).
-7.  To import a project, click the `Add New...` button and select the `Project` option.
-    ![](https://files.catbox.moe/3n76fh.png)
-8.  Click the `Continue with GitHub` button, search for the required Git Repository and import it by clicking the `Import` button. Alternatively, you can import a Third-Party Git Repository using the `Import Third-Party Git Repository ->` link at the bottom of the page.
-    ![](https://files.catbox.moe/mg5p04.png)
-9.  Create a Personal Access Token (PAT) as described in the [previous section](#first-step-get-your-personal-access-token-pat).
-10. Add the PAT as an environment variable named `PAT_1` (as shown).
-    ![](https://files.catbox.moe/0yclio.png)
-11. Click deploy, and you're good to go. See your domains to use the API!
-
-</details>
-
-## On other platforms
-
-> [!WARNING]
-> This way of using GRS is not officially supported and was added to cater to some particular use cases where Vercel could not be used (e.g. [#2341](https://github.com/iemafzalhassan/readme-stats/discussions/2341)). The support for this method, therefore, is limited.
-
-<details>
-<summary><b>:hammer_and_wrench: Step-by-step guide for deploying on other platforms</b></summary>
-
-1.  Fork or clone this repo as per your needs
-2.  Move `express` from the devDependencies to the dependencies section of `package.json`
-    <https://github.com/iemafzalhassan/readme-stats/blob/ba7c2f8b55eac8452e479c8bd38b044d204d0424/package.json#L54-L61>
-3.  Run `npm i` if needed (initial setup)
-4.  Run `node express.js` to start the server, or set the entry point to `express.js` in `package.json` if you're deploying on a managed service
-    <https://github.com/iemafzalhassan/readme-stats/blob/ba7c2f8b55eac8452e479c8bd38b044d204d0424/package.json#L11>
-5.  You're done 🎉
-    </details>
-
-## Available environment variables
-
-GitHub Readme Stats provides several environment variables that can be used to customize the behavior of your self-hosted instance. These include:
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Supported values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>CACHE_SECONDS</code></td>
-      <td>Sets the cache duration in seconds for the generated cards. This variable takes precedence over the default cache timings for the public instance. If this variable is not set, the default cache duration is 24 hours (86,400 seconds).</td>
-      <td>Any positive integer or <code>0</code> to disable caching</td>
-    </tr>
-    <tr>
-      <td><code>WHITELIST</code></td>
-      <td>A comma-separated list of GitHub usernames that are allowed to access your instance. If this variable is not set, all usernames are allowed.</td>
-      <td>Comma-separated GitHub usernames</td>
-    </tr>
-    <tr>
-      <td><code>GIST_WHITELIST</code></td>
-      <td>A comma-separated list of GitHub Gist IDs that are allowed to be accessed on your instance. If this variable is not set, all Gist IDs are allowed.</td>
-      <td>Comma-separated GitHub Gist IDs</td>
-    </tr>
-    <tr>
-      <td><code>EXCLUDE_REPO</code></td>
-      <td>A comma-separated list of repositories that will be excluded from stats and top languages cards on your instance. This allows repository exclusion without exposing repository names in public URLs. This enhances privacy for self-hosted instances that include private repositories in stats cards.</td>
-      <td>Comma-separated repository names</td>
-    </tr>
-    <tr>
-      <td><code>FETCH_MULTI_PAGE_STARS</code></td>
-      <td>Enables fetching all starred repositories for accurate star counts, especially for users with more than 100 repositories. This may increase response times and API points usage, so it is disabled on the public instance.</td>
-      <td><code>true</code> or <code>false</code></td>
-    </tr>
-  </tbody>
-</table>
-
-See [the Vercel documentation](https://vercel.com/docs/concepts/projects/environment-variables) on adding these environment variables to your Vercel instance.
-
-> [!WARNING]
-> Please remember to redeploy your instance after making any changes to the environment variables so that the updates take effect. The changes will not be applied to the previous deployments.
-
-## Keep your fork up to date
-
-You can keep your fork, and thus your private Vercel instance up to date with the upstream using GitHub's [Sync Fork button](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork). You can also use the [pull](https://github.com/wei/pull) package created by [@wei](https://github.com/wei) to automate this process.
-
-# :sparkling\_heart: Support the project
-
-I open-source almost everything I can and try to reply to everyone needing help using these projects. Obviously,
-this takes time. You can use this service for free.
-
-However, if you are using this project and are happy with it or just want to encourage me to continue creating stuff, there are a few ways you can do it:
-
-*   Giving proper credit when you use readme-stats on your readme, linking back to it. :D
-*   Starring and sharing the project. :rocket:
-*   [![paypal.me/iemafzalhassan](https://ionicabizau.github.io/badges/paypal.svg)](https://www.paypal.me/iemafzalhassan) - You can make a one-time donation via PayPal. I'll probably buy a ~~coffee~~ tea. :tea:
-
-Thanks! :heart:
-
-***
-
-[![https://vercel.com?utm\_source=github\_readme\_stats\_team\&utm\_campaign=oss](powered-by-vercel.svg)](https://vercel.com?utm_source=github_readme_stats_team\&utm_campaign=oss)
-
-Contributions are welcome! <3
-
-Made with :heart: and JavaScript.
+<div align="center">
+  <sub>Built with ❤️ and JavaScript · Maintained as an independent open-source hobby project.</sub>
+</div>

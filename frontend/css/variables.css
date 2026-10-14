@@ -5,7 +5,7 @@
   --bg-elevated: #18181c;
   --bg-hover: #222228;
   --bg-active: #27272f;
-  --bg-glass: rgba(18, 18, 21, 0.82);
+  --bg-glass: rgba(18, 18, 21, 0.96);
 
   --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
@@ -42,7 +42,7 @@ body.light-mode {
   --bg-elevated: #f1f5f9;
   --bg-hover: #e2e8f0;
   --bg-active: #cbd5e1;
-  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass: rgba(255, 255, 255, 0.96);
 
   --text-primary: #0f172a;
   --text-secondary: #475569;

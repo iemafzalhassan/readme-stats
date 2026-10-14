@@ -112,7 +112,7 @@ function buildSocialBadges(state, themeColors) {
   const badges = [];
   if (state.showVisitor) {
     const vUser = encodeURIComponent(state.username || "anuraghazra");
-    const vUrl = `${state.baseUrl}/api/visitor?username=${vUser}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}`;
+    const vUrl = `${state.baseUrl}/api/visitor?username=${vUser}&label=${encodeURIComponent(state.visitorLabel || "PROFILE VIEWS")}&style=${state.visitorStyle || "flat-square"}&theme=${encodeURIComponent(state.theme)}&v=v2.1`;
     badges.push(`<img src="${vUrl}" alt="Visitors" />`);
   }
   if (state.linkedin) {
@@ -154,8 +154,13 @@ function buildPinnedReposSection(state) {
     return "";
   }
   const repoUser = encodeURIComponent(state.username || "anuraghazra");
+  const customQuery = state.customColors
+    ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
+    : "";
+  const vParam = "&v=v2.1";
+
   const cards = state.selectedRepos.slice(0, 6).map((repoName) => {
-    const pinUrl = `${state.baseUrl}/api/pin?username=${repoUser}&repo=${encodeURIComponent(repoName)}&theme=${encodeURIComponent(state.theme)}&hide_border=${state.hideBorder}`;
+    const pinUrl = `${state.baseUrl}/api/pin?username=${repoUser}&repo=${encodeURIComponent(repoName)}&theme=${encodeURIComponent(state.theme)}&hide_border=${state.hideBorder}${customQuery}${vParam}`;
     return `  <a href="https://github.com/${repoUser}/${encodeURIComponent(repoName)}">\n    <img src="${pinUrl}" alt="${repoName}" />\n  </a>`;
   });
 
@@ -167,19 +172,23 @@ function buildMetricsSection(state) {
   const u = encodeURIComponent(state.username || "anuraghazra");
   const t = encodeURIComponent(state.theme);
   const hb = state.hideBorder ? "true" : "false";
+  const customQuery = state.customColors
+    ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
+    : "";
+  const vParam = "&v=v2.1";
 
   if (state.showStats) {
-    const statsUrl = `${state.baseUrl}/api?username=${u}&theme=${t}&show_icons=${state.showIcons}&include_all_commits=${state.includeAllCommits}&hide_rank=${state.hideRank}&hide_border=${hb}`;
+    const statsUrl = `${state.baseUrl}/api?username=${u}&theme=${t}&show_icons=${state.showIcons}&include_all_commits=${state.includeAllCommits}&hide_rank=${state.hideRank}&hide_border=${hb}${customQuery}${vParam}`;
     parts.push(`  <img src="${statsUrl}" height="175" alt="GitHub Stats" />`);
   }
 
   if (state.showStreak) {
-    const streakUrl = `${state.baseUrl}/api/streak?username=${u}&theme=${t}&hide_border=${hb}`;
+    const streakUrl = `${state.baseUrl}/api/streak?username=${u}&theme=${t}&hide_border=${hb}${customQuery}${vParam}`;
     parts.push(`  <img src="${streakUrl}" height="175" alt="GitHub Streak" />`);
   }
 
   if (state.showTopLangs) {
-    const langUrl = `${state.baseUrl}/api/top-langs?username=${u}&theme=${t}&layout=${encodeURIComponent(state.langsLayout || "compact")}&hide_border=${hb}&langs_count=8`;
+    const langUrl = `${state.baseUrl}/api/top-langs?username=${u}&theme=${t}&layout=${encodeURIComponent(state.langsLayout || "compact")}&hide_border=${hb}&langs_count=8${customQuery}${vParam}`;
     parts.push(`  <img src="${langUrl}" height="175" alt="Top Languages" />`);
   }
 
@@ -193,17 +202,21 @@ function buildAddonsSection(state) {
   const u = encodeURIComponent(state.username || "anuraghazra");
   const t = encodeURIComponent(state.theme);
   const hb = state.hideBorder ? "true" : "false";
+  const customQuery = state.customColors
+    ? `&title_color=${state.customColors.title_color}&text_color=${state.customColors.text_color}&icon_color=${state.customColors.icon_color}&bg_color=${state.customColors.bg_color}&border_color=${state.customColors.border_color}`
+    : "";
+  const vParam = "&v=v2.1";
 
   if (state.showTrophies) {
-    out += `### GitHub Achievements\n\n<p align="center">\n  <img src="${state.baseUrl}/api/trophies?username=${u}&theme=${t}&hide_border=${hb}" alt="Trophies" />\n</p>\n\n`;
+    out += `### GitHub Achievements\n\n<p align="center">\n  <img src="${state.baseUrl}/api/trophies?username=${u}&theme=${t}&hide_border=${hb}${customQuery}${vParam}" alt="Trophies" />\n</p>\n\n`;
   }
 
   if (state.showWakatime && state.wakatimeUser) {
-    out += `### Weekly Coding Breakdown (WakaTime)\n\n<p align="center">\n  <img src="${state.baseUrl}/api/wakatime?username=${encodeURIComponent(state.wakatimeUser)}&theme=${t}&layout=compact&hide_border=${hb}" alt="WakaTime" />\n</p>\n\n`;
+    out += `### Weekly Coding Breakdown (WakaTime)\n\n<p align="center">\n  <img src="${state.baseUrl}/api/wakatime?username=${encodeURIComponent(state.wakatimeUser)}&theme=${t}&layout=compact&hide_border=${hb}${customQuery}${vParam}" alt="WakaTime" />\n</p>\n\n`;
   }
 
   if (state.showQuotes) {
-    out += `<p align="center">\n  <img src="${state.baseUrl}/api/quotes?theme=${t}&layout=${encodeURIComponent(state.quoteLayout || "horizontal")}" alt="Developer Quote" />\n</p>\n\n`;
+    out += `<p align="center">\n  <img src="${state.baseUrl}/api/quotes?theme=${t}&layout=${encodeURIComponent(state.quoteLayout || "horizontal")}${customQuery}${vParam}" alt="Developer Quote" />\n</p>\n\n`;
   }
 
   if (state.showWatermark) {

@@ -147,6 +147,7 @@ const state = {
   email: "",
   templateId: "devops",
   theme: "tokyonight",
+  customColors: null,
   syncPreviewTheme: true,
   iconProvider: "skillicons",
   iconShape: "dark",
@@ -300,9 +301,35 @@ async function loadThemesFromApi() {
 function renderActiveThemeInspector() {
   const labelEl = document.getElementById("active-theme-label");
   const pillsEl = document.getElementById("active-theme-hex-pills");
-  const colors = state.allThemes[state.theme] || FALLBACK_THEMES.tokyonight;
+  const colors =
+    state.customColors ||
+    state.allThemes[state.theme] ||
+    FALLBACK_THEMES.tokyonight;
 
-  if (labelEl) labelEl.textContent = state.theme;
+  if (labelEl)
+    labelEl.textContent = state.customColors
+      ? "custom (plugged in)"
+      : state.theme;
+
+  // Sync Custom Theme Creator fields
+  const titleHex = cleanHex(colors.title_color, "70a5fd");
+  const textHex = cleanHex(colors.text_color, "38bdae");
+  const iconHex = cleanHex(colors.icon_color, "bf91f3");
+  const bgHex = cleanHex(colors.bg_color, "1a1b27");
+  const borderHex = cleanHex(colors.border_color, "2a2e40");
+
+  const syncField = (pickerId, inputId, hex) => {
+    const p = document.getElementById(pickerId);
+    const i = document.getElementById(inputId);
+    if (p) p.value = "#" + hex;
+    if (i) i.value = hex;
+  };
+  syncField("picker-custom-title", "color-custom-title", titleHex);
+  syncField("picker-custom-text", "color-custom-text", textHex);
+  syncField("picker-custom-icon", "color-custom-icon", iconHex);
+  syncField("picker-custom-bg", "color-custom-bg", bgHex);
+  syncField("picker-custom-border", "color-custom-border", borderHex);
+
   if (!pillsEl) return;
 
   const items = [
@@ -591,7 +618,9 @@ function renderRepoChecklist() {
 
 function refreshStudioOutput() {
   const themeColors =
-    state.allThemes[state.theme] || FALLBACK_THEMES.tokyonight;
+    state.customColors ||
+    state.allThemes[state.theme] ||
+    FALLBACK_THEMES.tokyonight;
   const md = generateTemplateMarkdown(state, themeColors);
 
   const rawArea = document.getElementById("raw-markdown-output");
@@ -949,6 +978,124 @@ function bindEvents() {
     URL.revokeObjectURL(url);
     showToast("Downloaded README.md!");
   });
+
+  // Plug & Play Custom Theme Creator
+  const pickers = [
+    { picker: "picker-custom-title", input: "color-custom-title" },
+    { picker: "picker-custom-text", input: "color-custom-text" },
+    { picker: "picker-custom-icon", input: "color-custom-icon" },
+    { picker: "picker-custom-bg", input: "color-custom-bg" },
+    { picker: "picker-custom-border", input: "color-custom-border" },
+  ];
+
+  pickers.forEach(({ picker, input }) => {
+    const pEl = document.getElementById(picker);
+    const iEl = document.getElementById(input);
+    pEl?.addEventListener("input", (e) => {
+      if (iEl) iEl.value = e.target.value.replace("#", "");
+    });
+    iEl?.addEventListener("input", (e) => {
+      const val = e.target.value.trim().replace("#", "");
+      if (pEl && val.length === 6) pEl.value = "#" + val;
+    });
+  });
+
+  document
+    .getElementById("btn-apply-custom-theme")
+    ?.addEventListener("click", () => {
+      const title_color =
+        document
+          .getElementById("color-custom-title")
+          ?.value.trim()
+          .replace("#", "") || "70a5fd";
+      const text_color =
+        document
+          .getElementById("color-custom-text")
+          ?.value.trim()
+          .replace("#", "") || "38bdae";
+      const icon_color =
+        document
+          .getElementById("color-custom-icon")
+          ?.value.trim()
+          .replace("#", "") || "bf91f3";
+      const bg_color =
+        document
+          .getElementById("color-custom-bg")
+          ?.value.trim()
+          .replace("#", "") || "1a1b27";
+      const border_color =
+        document
+          .getElementById("color-custom-border")
+          ?.value.trim()
+          .replace("#", "") || "2a2e40";
+
+      state.customColors = {
+        title_color,
+        text_color,
+        icon_color,
+        bg_color,
+        border_color,
+      };
+      renderActiveThemeInspector();
+      refreshStudioOutput();
+      showToast("Plugged in custom palette live across all cards!");
+    });
+
+  document
+    .getElementById("btn-reset-custom-theme")
+    ?.addEventListener("click", () => {
+      state.customColors = null;
+      renderActiveThemeInspector();
+      refreshStudioOutput();
+      showToast("Unplugged custom palette - restored theme default");
+    });
+
+  document
+    .getElementById("btn-export-theme-json")
+    ?.addEventListener("click", () => {
+      const title_color =
+        document
+          .getElementById("color-custom-title")
+          ?.value.trim()
+          .replace("#", "") || "70a5fd";
+      const text_color =
+        document
+          .getElementById("color-custom-text")
+          ?.value.trim()
+          .replace("#", "") || "38bdae";
+      const icon_color =
+        document
+          .getElementById("color-custom-icon")
+          ?.value.trim()
+          .replace("#", "") || "bf91f3";
+      const bg_color =
+        document
+          .getElementById("color-custom-bg")
+          ?.value.trim()
+          .replace("#", "") || "1a1b27";
+      const border_color =
+        document
+          .getElementById("color-custom-border")
+          ?.value.trim()
+          .replace("#", "") || "2a2e40";
+
+      const json = JSON.stringify(
+        {
+          custom_palette: {
+            title_color,
+            text_color,
+            icon_color,
+            bg_color,
+            border_color,
+          },
+        },
+        null,
+        2,
+      );
+
+      navigator.clipboard.writeText(json);
+      showToast("Theme JSON copied! Plug into themes/index.js or your cards.");
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

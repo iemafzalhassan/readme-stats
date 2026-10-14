@@ -124,13 +124,24 @@
           class="btn btn-ghost btn-sm"
           title="Fork repository to self-host on Vercel"
         >
-          <i class="fa-solid fa-code-fork"></i> Fork
+          <i class="fa-solid fa-code-fork"></i>
+          <span class="btn-label">Fork</span>
         </a>
-        <button id="btn-copy-md" class="btn btn-ghost btn-sm">
-          <i class="fa-regular fa-copy"></i> Copy .md
+        <button
+          id="btn-copy-md"
+          class="btn btn-ghost btn-sm"
+          title="Copy Markdown to Clipboard"
+        >
+          <i class="fa-regular fa-copy"></i>
+          <span class="btn-label">Copy .md</span>
         </button>
-        <button id="btn-download-md" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-download"></i> Download .md
+        <button
+          id="btn-download-md"
+          class="btn btn-primary btn-sm"
+          title="Download README.md"
+        >
+          <i class="fa-solid fa-download"></i>
+          <span class="btn-label">Download .md</span>
         </button>
       </div>
     </header>
@@ -483,6 +494,221 @@ Automating cloud-native infrastructure, Kubernetes platforms, and open-source de
                 </div>
                 <input type="checkbox" id="check-sync-preview-theme" checked />
               </label>
+            </div>
+
+            <!-- Custom Theme Creator / Plugin Studio -->
+            <div class="active-theme-card" style="margin-top: 1rem">
+              <div class="panel-header" style="margin-bottom: 0.5rem">
+                <div>
+                  <div class="panel-title">
+                    <i class="fa-solid fa-palette"></i> Plug & Play Custom Theme
+                    Creator
+                  </div>
+                  <div class="panel-subtitle">
+                    Build your custom palette live. Instant plug-and-play with
+                    1-click unplug back to default.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="field-grid"
+                style="
+                  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                  gap: 0.6rem;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                <div class="field-group">
+                  <label class="field-label" for="color-custom-title"
+                    >Title Color</label
+                  >
+                  <div style="display: flex; align-items: center; gap: 0.4rem">
+                    <input
+                      type="color"
+                      id="picker-custom-title"
+                      value="#70a5fd"
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        padding: 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: transparent;
+                      "
+                    />
+                    <input
+                      type="text"
+                      id="color-custom-title"
+                      class="field-input"
+                      value="70a5fd"
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        padding: 0.35rem 0.5rem;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="color-custom-text"
+                    >Text Color</label
+                  >
+                  <div style="display: flex; align-items: center; gap: 0.4rem">
+                    <input
+                      type="color"
+                      id="picker-custom-text"
+                      value="#38bdae"
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        padding: 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: transparent;
+                      "
+                    />
+                    <input
+                      type="text"
+                      id="color-custom-text"
+                      class="field-input"
+                      value="38bdae"
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        padding: 0.35rem 0.5rem;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="color-custom-icon"
+                    >Icon Color</label
+                  >
+                  <div style="display: flex; align-items: center; gap: 0.4rem">
+                    <input
+                      type="color"
+                      id="picker-custom-icon"
+                      value="#bf91f3"
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        padding: 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: transparent;
+                      "
+                    />
+                    <input
+                      type="text"
+                      id="color-custom-icon"
+                      class="field-input"
+                      value="bf91f3"
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        padding: 0.35rem 0.5rem;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="color-custom-bg"
+                    >Background</label
+                  >
+                  <div style="display: flex; align-items: center; gap: 0.4rem">
+                    <input
+                      type="color"
+                      id="picker-custom-bg"
+                      value="#1a1b27"
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        padding: 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: transparent;
+                      "
+                    />
+                    <input
+                      type="text"
+                      id="color-custom-bg"
+                      class="field-input"
+                      value="1a1b27"
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        padding: 0.35rem 0.5rem;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="color-custom-border"
+                    >Border Color</label
+                  >
+                  <div style="display: flex; align-items: center; gap: 0.4rem">
+                    <input
+                      type="color"
+                      id="picker-custom-border"
+                      value="#2a2e40"
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        padding: 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: transparent;
+                      "
+                    />
+                    <input
+                      type="text"
+                      id="color-custom-border"
+                      class="field-input"
+                      value="2a2e40"
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        padding: 0.35rem 0.5rem;
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  flex-wrap: wrap;
+                "
+              >
+                <button
+                  id="btn-apply-custom-theme"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Apply Custom
+                  Palette
+                </button>
+                <button
+                  id="btn-reset-custom-theme"
+                  class="btn btn-ghost btn-sm"
+                >
+                  <i class="fa-solid fa-rotate-left"></i> Unplug / Reset to
+                  Theme
+                </button>
+                <button
+                  id="btn-export-theme-json"
+                  class="btn btn-ghost btn-sm"
+                  title="Copy JSON configuration for plugins or themes/index.js"
+                >
+                  <i class="fa-solid fa-code"></i> Copy Theme JSON
+                </button>
+              </div>
             </div>
 
             <div class="panel-header">

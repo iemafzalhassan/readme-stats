@@ -1511,14 +1511,169 @@ export function getIconById(id) {
   return ICON_CATALOG.find((item) => item.id === id);
 }
 
-// Guaranteed non-broken thumbnail URL using Iconify universal SVG endpoint
+export const DEVICON_NAME_MAP = {
+  gcp: "googlecloud",
+  aws: "amazonwebservices",
+  airflow: "apacheairflow",
+  kafka: "apachekafka",
+  spark: "apachespark",
+  "dot-net": "dot-net",
+  csharp: "csharp",
+  cplusplus: "cplusplus",
+  golang: "go",
+  k8s: "kubernetes",
+  tf: "terraform",
+  psql: "postgresql",
+  postgres: "postgresql",
+  mongo: "mongodb",
+  elastic: "elasticsearch",
+  js: "javascript",
+  ts: "typescript",
+  py: "python",
+  rb: "ruby",
+  sh: "bash",
+  tailwind: "tailwindcss",
+  vue: "vuejs",
+  next: "nextjs",
+  nuxt: "nuxtjs",
+};
+
+export const DEVICON_PLAIN_ONLY = new Set([
+  "axios",
+  "bulma",
+  "circleci",
+  "codecov",
+  "codeigniter",
+  "cucumber",
+  "django",
+  "gitter",
+  "graphql",
+  "gulp",
+  "jest",
+  "objectivec",
+  "rails",
+]);
+
+export const DEVICON_KNOWN_SET = new Set([
+  "amazonwebservices",
+  "googlecloud",
+  "azure",
+  "kubernetes",
+  "docker",
+  "terraform",
+  "ansible",
+  "helm",
+  "linux",
+  "ubuntu",
+  "debian",
+  "centos",
+  "redhat",
+  "prometheus",
+  "grafana",
+  "datadog",
+  "elasticsearch",
+  "apachekafka",
+  "rabbitmq",
+  "redis",
+  "postgresql",
+  "mysql",
+  "mongodb",
+  "sqlite",
+  "oracle",
+  "dynamodb",
+  "cassandra",
+  "graphql",
+  "fastify",
+  "express",
+  "nestjs",
+  "spring",
+  "django",
+  "flask",
+  "fastapi",
+  "ruby",
+  "rails",
+  "php",
+  "laravel",
+  "dot-net",
+  "csharp",
+  "cplusplus",
+  "c",
+  "java",
+  "python",
+  "javascript",
+  "typescript",
+  "go",
+  "rust",
+  "scala",
+  "kotlin",
+  "swift",
+  "dart",
+  "flutter",
+  "react",
+  "vuejs",
+  "angular",
+  "svelte",
+  "nextjs",
+  "nuxtjs",
+  "tailwindcss",
+  "bootstrap",
+  "sass",
+  "webpack",
+  "vite",
+  "git",
+  "github",
+  "gitlab",
+  "bitbucket",
+  "jenkins",
+  "argocd",
+  "apacheairflow",
+  "apachespark",
+  "nginx",
+  "apache",
+  "cloudflare",
+  "visualstudio",
+  "vscode",
+  "intellij",
+  "pycharm",
+  "postman",
+  "yarn",
+  "npm",
+  "pnpm",
+  "gradle",
+  "maven",
+  "figma",
+  "storybook",
+  "prisma",
+  "sequelize",
+  "socketio",
+  "electron",
+  "ionic",
+  "android",
+  "apple",
+]);
+
+export function getDeviconUrl(icon, shape = "original", fallbackTint = "") {
+  const devSlug = DEVICON_NAME_MAP[icon.id] || icon.id;
+  if (DEVICON_KNOWN_SET.has(devSlug)) {
+    let variant = shape === "plain" ? "plain" : "original";
+    if (devSlug === "amazonwebservices") {
+      variant = shape === "plain" ? "plain-wordmark" : "original-wordmark";
+    } else if (DEVICON_PLAIN_ONLY.has(devSlug)) {
+      variant = "plain";
+    }
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${devSlug}/${devSlug}-${variant}.svg`;
+  }
+  const cleanColor = (fallbackTint || icon.color || "6366f1")
+    .toString()
+    .replace("#", "");
+  return `https://cdn.simpleicons.org/${icon.simpleIcon || icon.id}/${cleanColor}`;
+}
+
+// Guaranteed non-broken thumbnail URL using official Simple Icons edge CDN (Cloudflare cached, rate-limit free)
 export function getIconThumbnailUrl(icon, tintHex = "") {
-  const color = (tintHex || icon.color || "6366f1").replace("#", "");
-  const path = (icon.iconify || `simple-icons:${icon.simpleIcon}`).replace(
-    ":",
-    "/",
-  );
-  return `https://api.iconify.design/${path}.svg?color=%23${color}`;
+  const color = (tintHex || icon.color || "6366f1").toString().replace("#", "");
+  const slug = icon.simpleIcon || icon.id;
+  return `https://cdn.simpleicons.org/${slug}/${color}`;
 }
 
 export function renderTechStackMarkdown({
@@ -1583,13 +1738,29 @@ export function renderTechStackMarkdown({
     return `<p align="center">\n${badges.join("\n")}\n</p>`;
   }
 
-  if (provider === "iconify" || provider === "simpleicons") {
+  if (provider === "simpleicons") {
     const items = icons.map((icon) => {
       let tint = icon.color;
       if (themeSync || shape === "theme-icon") tint = iconHex;
       else if (shape === "theme-title") tint = titleHex;
       else if (shape === "white") tint = "ffffff";
-      const url = getIconThumbnailUrl(icon, tint);
+      const cleanTint = tint.toString().replace("#", "");
+      const slug = icon.simpleIcon || icon.id;
+      const url = `https://cdn.simpleicons.org/${slug}/${cleanTint}`;
+      return `  <img src="${url}" width="${size}" height="${size}" alt="${icon.name}" title="${icon.name}" />`;
+    });
+    return `<p align="center">\n${items.join("&nbsp;&nbsp;&nbsp;")}\n</p>`;
+  }
+
+  if (provider === "iconify") {
+    const items = icons.map((icon) => {
+      let tint = icon.color;
+      if (themeSync || shape === "theme-icon") tint = iconHex;
+      else if (shape === "theme-title") tint = titleHex;
+      else if (shape === "white") tint = "ffffff";
+      const cleanTint = tint.toString().replace("#", "");
+      const slug = icon.simpleIcon || icon.id;
+      const url = `https://cdn.simpleicons.org/${slug}/${cleanTint}`;
       return `  <img src="${url}" width="${size}" height="${size}" alt="${icon.name}" title="${icon.name}" />`;
     });
     return `<p align="center">\n${items.join("&nbsp;&nbsp;&nbsp;")}\n</p>`;
@@ -1598,7 +1769,7 @@ export function renderTechStackMarkdown({
   if (provider === "devicon") {
     const items = icons.map((icon) => {
       const tint = themeSync ? iconHex : icon.color;
-      const url = getIconThumbnailUrl(icon, tint);
+      const url = getDeviconUrl(icon, shape, tint);
       return `  <img src="${url}" width="${size}" height="${size}" alt="${icon.name}" title="${icon.name}" />`;
     });
     return `<p align="center">\n${items.join("&nbsp;&nbsp;&nbsp;")}\n</p>`;

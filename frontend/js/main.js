@@ -512,7 +512,7 @@ function renderIconCatalog() {
     tile.className = `icon-tile ${isSelected ? "selected" : ""}`;
 
     const thumbUrl = getIconThumbnailUrl(icon);
-    const fallbackUrl = `/api/icon?name=${encodeURIComponent(icon.id)}&label=${encodeURIComponent(icon.name)}&color=${encodeURIComponent(icon.color)}`;
+    const fallbackUrl = `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${encodeURIComponent(icon.simpleIcon || icon.id)}.svg`;
 
     tile.innerHTML = `
       <div class="icon-tile-thumb">
